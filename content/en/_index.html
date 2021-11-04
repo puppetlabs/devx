@@ -1,0 +1,50 @@
++++
+title = "DevX"
+linkTitle = "DevX"
+
++++
+
+<section class="td-cover-block td-cover-block--height-max js-td-cover -bg-dark" style="text-align: center; margin-left: -15px; margin-right: -15px;">
+	<div class="mx-auto">
+		<div class="display-1 m-5">DevX Tools</div>
+		<a class="btn btn-lg btn-primary mr-3 mb-4" href="#tools">
+			View Tools <i class="fas fa-arrow-circle-down ml-2"></i>
+		</a>
+		<a class="btn btn-lg btn-secondary mr-3 mb-4" href="/about">
+			About <i class="fas fa-bookmark ml-2"></i>
+		</a>
+	</div>
+	<p class="lead mt-5 pl-5 pr-5">Welcome to the DevX tooling documentation site! Here you can find all documentation relevant to the usage and development of PCT and PRM.</p> 
+</section>
+
+<div id="tools"></div>
+
+<div class="card-deck center mt-5 mb-5 container-md mx-auto">
+	{{< project-card title="PCT" icon="fa-align-left" installUrl="/pct/install" docsUrl="/pct" >}} 
+	Puppet Content Templates (PCT) codify a structure to produce content for any Puppet Product that can be authored by Puppet Product Teams or external users without direct help of the PDK team. 
+	{{< /project-card>}}
+	{{< project-card title="PRM" icon="fa-boxes" installUrl="/prm/install" docsUrl="/prm" >}} 
+	Puppet runtime manager (PRM) is a program that allows for the management of Puppet versions, along with their respective Ruby versions.
+	This is achieved through the use of custom backends (local, docker or ____) resulting in faster, more efficient functionality when compared to the PDK.
+	{{< /project-card>}}
+</div>
+
+{{< blocks/section color="dark">}}
+{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
+The Goldydocs UI now shows chair size metrics by default.
+
+Please follow this space for updates!
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" %}}
+We do a [Pull Request](https://github.com/puppetlabs/devx/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/puppetize" %}}
+For announcement of latest features etc.
+{{% /blocks/feature %}}
+
+
+{{< /blocks/section>}}

@@ -1,0 +1,38 @@
+{{ $title := .Get "title" | default "" }}
+{{ $titleColor := .Get "titleColor" | default "text-dark" }}
+{{ $icon := .Get "icon" | default "fa-lightbulb" }}
+{{ $iconBackground := .Get "iconBackground" | default "secondary" }}
+{{ $url := .Get "url" }}
+{{ $cardType := .Get "cardType" | default "card-header"}}
+{{ $docsUrl :=  .Get "docsUrl"}}
+{{ $installUrl :=  .Get "installUrl"}}
+<div class="card text-center ml-5 mr-5">
+  {{- if $url -}}<a href="{{ $url }}" class="card-link stretched-link" title="{{ $title }}">{{- end -}}
+  <div class="{{ $cardType }}">
+    <div class="d-flex justify-content-center">
+      <span class="fa-stack fa-3x m-2" title="{{ $title }}">
+        <i class="fas fa-circle fa-stack-2x text-{{ $iconBackground }}"></i>
+        <i class="fas {{ $icon }} fa-stack-1x fa-inverse"></i>
+        <span class="sr-only">{{ $title }}</span>
+      </span>
+    </div>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title {{ $titleColor }}">{{ $title }}</h3>
+    <p class="card-text text-break text-dark text-left">{{ trim .Inner "\n" }}</p>
+    {{- if $url -}}</a>{{- end -}}
+  </div>
+  <container>
+    {{- if $docsUrl -}}
+    <a class="btn btn-lg btn-primary mr-3 mb-4" href={{$docsUrl}}>
+      View Docs <i class="fas fa-book ml-2"></i>
+    </a>
+    {{- end -}}
+    {{- if $installUrl -}}
+    <a class="btn btn-lg btn-secondary mr-3 mb-4" href={{$installUrl}}>
+      Install <i class="fab fa-github ml-2 "></i>
+    </a>
+    {{- end -}}
+  </container>
+  {{- if $url -}}</a>{{- end -}}
+</div>

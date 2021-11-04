@@ -1,0 +1,16 @@
+/*
+
+Add styles or override variables from the theme here.
+
+*/
+$google_font_name: "Roboto";
+
+$primary: #333333;
+$secondary: #FFA419;
+$enable-gradients: false;
+$enable-rounded: true;
+$enable-shadows: false;
+
+footer {
+    background: $primary;
+}
