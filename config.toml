@@ -212,10 +212,7 @@ enable = false
     target = 'content/pct/CHANGELOG.md'
   [[module.imports.mounts]]
     source = 'CONTRIBUTING.md'
-    target = 'content/pct/CONTRIBUTING.md'
-  [[module.imports.mounts]]
-    source = 'README.md'
-    target = 'content/pct/README.md'
+    target = 'content/pct/contact/CONTRIBUTING.md'
     
 
 [[module.imports]]
