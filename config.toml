@@ -203,32 +203,16 @@ enable = false
 [[module.imports]]
   ignoreImports = true
   ignoreConfig = true
-  path = 'github.com/puppetlabs/pdkgo'
+  path = 'github.com/puppetlabs/pdkgo/docs/md'
   [[module.imports.mounts]]
-    source = 'docs/md/'
+    source = 'content'
     target = 'content/pct/'
-  [[module.imports.mounts]]
-    source = 'CHANGELOG.md'
-    target = 'content/pct/CHANGELOG.md'
-  [[module.imports.mounts]]
-    source = 'CONTRIBUTING.md'
-    target = 'content/pct/contact/CONTRIBUTING.md'
     
 
 [[module.imports]]
   ignoreImports = true
   ignoreConfig = true
-  path = 'github.com/puppetlabs/prm'  # Change to correct Git URI
+  path = 'github.com/puppetlabs/prm/docs/md'  # Change to correct Git URI
   [[module.imports.mounts]]
-    source = 'docs/md/'
+    source = 'content'
     target = 'content/prm/'
-  [[module.imports.mounts]]
-    source = 'CHANGELOG.md'
-    target = 'content/prm/CHANGELOG.md'
-  [[module.imports.mounts]]
-    source = 'CONTRIBUTING.md'
-    target = 'content/prm/CONTRIBUTING.md'
-  [[module.imports.mounts]]
-    source = 'README.md'
-    target = 'content/prm/README.md'
-    
