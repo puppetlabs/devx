@@ -12,7 +12,7 @@
   {{ else if $gh_repo }}
     {{ $gh_repo_path := "" }}
     {{ if hasPrefix $pathFormatted "pct/" }}
-      {{ $new_path := replace $pathFormatted "pct" "docs/md" }}
+      {{ $new_path := replace $pathFormatted "pct" "docs/md/content" }}
       {{ if strings.HasSuffix $pathFormatted "CONTRIBUTING.md" }}
         {{ $new_path = "CONTRIBUTING.md" }}
       {{ else if strings.HasSuffix $pathFormatted "CHANGELOG.md" }}
@@ -21,7 +21,7 @@
       {{ $gh_repo_path = printf "%s/%s" $gh_branch $new_path }}
       {{ $gh_repo = "https://github.com/puppetlabs/pdkgo" }}
     {{ else if hasPrefix $pathFormatted "prm/" }}
-      {{ $new_path := replace $pathFormatted "prm" "docs/md" }}{{ if strings.HasSuffix $pathFormatted "CONTRIBUTING.md" }}
+      {{ $new_path := replace $pathFormatted "prm" "docs/md/content" }}{{ if strings.HasSuffix $pathFormatted "CONTRIBUTING.md" }}
         {{ $new_path = "CONTRIBUTING.md" }}
       {{ else if strings.HasSuffix $pathFormatted "CHANGELOG.md" }}
         {{ $new_path = "CHANGELOG.md" }}
