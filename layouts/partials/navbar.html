@@ -21,15 +21,17 @@
 			</li>
 			{{ end }}
 			<!-- HARD CODED DROP DOWN FOR RELEASE SELECTION -->
-            <li class="nav-item dropdown" {{ if not ($versions) }} style="display: none" {{ end }}>
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				  Releases
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				  <a class="dropdown-item" href="/pct/changelog">PCT</a>
-				  <a class="dropdown-item" href="/prm/changelog">PRM</a>
-				</div>
-			  </li>
+			{{ if $versions }} 
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  Releases
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="/pct/changelog">PCT</a>
+				<a class="dropdown-item" href="/prm/changelog">PRM</a>
+			  </div>
+			</li>
+			{{ end }}
 			{{ if  .Site.Params.versions }}
 			<li class="nav-item dropdown mr-4 d-none d-lg-block">
 				{{ partial "navbar-version-selector.html" . }}
