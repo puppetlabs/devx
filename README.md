@@ -18,11 +18,7 @@ To install/update the Docsy theme use
 ## Add Hugo Modules
 Run the following command to download the pdkgo and prm modules and their dependencies:
 
-`hugo mod get github.com/puppetlabs/pdkgo`
-
-`hugo mod get github.com/puppetlabs/prm`
-
-> This may take some time, potentially in excess of **5 minutes**.
+`hugo mod get`
 
 To update these hugo modules repeat the above commands.
 ## Run the Hugo server
