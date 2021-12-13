@@ -1,0 +1,8 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – Contributing and Feedback</title><link>https://puppetlabs.github.io/devx/pct/contact/</link><description>Recent content in Contributing and Feedback on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/pct/contact/index.xml" rel="self" type="application/rss+xml"/><item><title>Pct: Contact DevX about PCT</title><link>https://puppetlabs.github.io/devx/pct/contact/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/contact/contact/</guid><description>
+&lt;h2 id="requesting-a-feature">Requesting a feature&lt;/h2>
+&lt;p>Open a new feature request in our &lt;a href="https://github.com/puppetlabs/pdkgo/issues/new">Github discussion&lt;/a> page.&lt;/p>
+&lt;h2 id="reporting-problems">Reporting Problems&lt;/h2>
+&lt;p>If you&amp;rsquo;re having trouble with the experimental PCT tool, please follow these instructions
+to file an issue on our GitHub repository: &lt;a href="https://github.com/puppetlabs/pdkgo/issues/new">https://github.com/puppetlabs/pdkgo/issues/new&lt;/a>&lt;/p>
+&lt;p>Make sure to fill in the information that is requested in the issue template as it
+will help us investigate the problem more quickly.&lt;/p></description></item></channel></rss>

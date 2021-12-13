@@ -1,0 +1,302 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – PCT</title><link>https://puppetlabs.github.io/devx/pct/</link><description>Recent content in PCT on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/pct/index.xml" rel="self" type="application/rss+xml"/><item><title>Pct: Getting Started With Templates</title><link>https://puppetlabs.github.io/devx/pct/usage/templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/usage/templates/</guid><description>
+&lt;h2 id="getting-started-with-templates">Getting Started with Templates&lt;/h2>
+&lt;p>The &lt;code>$INSTALLATION_ROOT/templates&lt;/code> directory will be subsequently referred to as the &lt;strong>Default Template Location&lt;/strong>.&lt;/p>
+&lt;p>Templates currently come in 2 flavours: &lt;code>project&lt;/code> and &lt;code>item&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>A &lt;code>project&lt;/code> is a template containing many files in a particular structure. They create a ready-to-run structure to start using a Puppet product. &lt;em>These are great starting points.&lt;/em> You can create a boilerplate empty starter Puppet Module or a fully customized Puppet Module with specialized CI files and RSAPI providers.&lt;/li>
+&lt;li>An &lt;code>item&lt;/code> is a template that will supplement a project or existing content. These could be language features like a Puppet class or single files like a Git ignore file.&lt;/li>
+&lt;/ul>
+&lt;h3 id="pct-new">pct new&lt;/h3>
+&lt;p>PCT is available through the &lt;code>pct new&lt;/code> command.&lt;/p>
+&lt;p>The &lt;code>--list&lt;/code> or &lt;code>-l&lt;/code> flag displays a list of locally available templates located in the &lt;strong>Default Template Location&lt;/strong>. The list of templates is also available by calling &lt;code>pct new&lt;/code> without flags.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct new
+pct new --list
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example output:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> DISPLAYNAME | AUTHOR | NAME | TYPE
+--------------------------------+------------+-------------------------+------
+| | |
+Bolt Plan | puppetlabs | bolt-plan | item
+Bolt Project | puppetlabs | bolt-project | project
+Bolt PowerShell Task | puppetlabs | bolt-pwsh-task | item
+Bolt YAML Plan | puppetlabs | bolt-yaml-plan | item
+Puppet Module Managed Gemfile | puppetlabs | git-attributes | item
+Puppet Class | puppetlabs | puppet-class | item
+Puppet Content Template | puppetlabs | puppet-content-template | project
+Puppet Defined Type | puppetlabs | puppet-defined-type | item
+Puppet Fact | puppetlabs | puppet-fact | item
+Puppet Module | puppetlabs | puppet-module | project
+Puppet Resource API Provider | puppetlabs | rsapi-provider | item
+Puppet Resource API Transport | puppetlabs | puppet-transport | item
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using the available templates above, its time to generate some content.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct new &amp;lt;author&amp;gt;/&amp;lt;template&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>&amp;lt;author&amp;gt;&lt;/code> and &lt;code>&amp;lt;template&amp;gt;&lt;/code> with the &lt;code>author&lt;/code> and &lt;code>name&lt;/code> of the template containing the content you want.&lt;/p>
+&lt;p>By default the &lt;code>new &amp;lt;author&amp;gt;/&amp;lt;template&amp;gt;&lt;/code> function will use the directory name of your current working directory to &amp;ldquo;name&amp;rdquo; your new content.
+To override this behaviour use the &lt;code>--name&lt;/code> or &lt;code>-n&lt;/code> flag.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct new &amp;lt;author&amp;gt;/&amp;lt;template&amp;gt; --name MyProject
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default the &lt;code>new &amp;lt;author&amp;gt;/&amp;lt;template&amp;gt;&lt;/code> function will output the template content to the current working directory.
+To override this behavour use the &lt;code>--output&lt;/code> or &lt;code>-o&lt;/code> flag.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct new &amp;lt;author&amp;gt;/&amp;lt;template&amp;gt; --output /path/to/your/project
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-light" role="alert">
+Not all templates require a &lt;code>name&lt;/code>. If a template doesn&amp;rsquo;t require one, providing a value to the &lt;code>--name&lt;/code> parameter will have no effect on the generated content.
+&lt;/div>
+&lt;h3 id="example-workflows">Example workflows&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; &lt;span style="color:#8be9fd;font-style:italic">cd&lt;/span> /home/me/projects/MyBoltProject
+&amp;gt; pct new puppetlabs/bolt-project
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; pct new puppet-module -n MyNewProject -o /home/me/projects/
+&amp;gt; &lt;span style="color:#8be9fd;font-style:italic">cd&lt;/span> /home/me/projects/MyNewProject
+&amp;gt; pct new puppetlabs/puppet-fact -n ApplicationVersion
+&amp;gt; pct new puppetlabs/rsapi-provider -n Awesomething
+&amp;gt; pct new puppetlabs/puppet-transport -n AwesomethingApi
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="template-updates">Template Updates&lt;/h3>
+&lt;p>At this time &lt;code>pct new&lt;/code> will &lt;strong>NOT&lt;/strong> update existing code to a newer version of a template.&lt;/p>
+&lt;p>If you run a &lt;code>pct new&lt;/code> command using a &lt;code>project&lt;/code> template, the project will replace the content within the output directory with the template code.&lt;/p>
+&lt;p>If you run a &lt;code>pct new&lt;/code> command using an &lt;code>item&lt;/code> template, the item will suppliment the content within the output directory with the template code. If files / folders that are named the same as the template content already exist, it will overwite this content.&lt;/p></description></item><item><title>Pct: Installation</title><link>https://puppetlabs.github.io/devx/pct/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/install/</guid><description>
+&lt;h2 id="installing">Installing&lt;/h2>
+&lt;p>While the PCT is in early release, we provide an archive and a simple script to unpack it. When we move closer to a full release we will add a platform specific installer. Use the &lt;code>install.[ps1|sh]&lt;/code> script, depending upon your OS:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">
+&lt;a class="nav-link active tab-Unix"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab" onclick="handleClick(&amp;#34;Unix&amp;#34;);"
+aria-controls="tabs-0-0" aria-selected="true">
+Unix
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Windows"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab" onclick="handleClick(&amp;#34;Windows&amp;#34;);"
+aria-controls="tabs-0-1" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">&lt;div class="tab-pane fade show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">curl -L https://pup.pt/pdkgo/install.sh | sh&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>https://pup.pt/pdkgo/install.ps1)&lt;span style="color:#f1fa8c">; Install-Pct }&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>This will install the latest release of PCT to &lt;code>~/.puppetlabs/pct&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/install_and_export_path.gif?raw=true" alt="install_pct">&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+If you do not use the install script and are extracting the archive yourself, be sure to use the fully qualified path to &lt;code>~/.puppetlabs/pct&lt;/code> on *nix or &lt;code>$HOME/.puppetlabs/pct&lt;/code> on Windows when you set your &lt;code>PATH&lt;/code> environment variable.
+&lt;/div>
+&lt;p>A version of the product, with telemetry functionality disabled, is available too.
+See &lt;a href="#installing-telemetry-free-version">here&lt;/a> for instructions on how to install it.&lt;/p>
+&lt;h3 id="setting-up-tab-completion">Setting up Tab Completion&lt;/h3>
+&lt;p>After installation, we&amp;rsquo;d highly recommend setting up tab completion for your shell to ensure the best possible experience.&lt;/p>
+&lt;p>PCT has built in tab completion support for the following shells: &lt;code>bash&lt;/code>, &lt;code>zsh&lt;/code>, &lt;code>fish&lt;/code> and &lt;code>powershell&lt;/code>.&lt;/p>
+&lt;p>To view the install instructions, access the &lt;code>--help&lt;/code> menu in &lt;code>pct completion&lt;/code> and follow the instructions for your shell:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/completion_setup.gif?raw=true" alt="tab_completion">&lt;/p>
+&lt;h2 id="installing-telemetry-free-version">Installing Telemetry Free Version&lt;/h2>
+&lt;p>As of &lt;code>0.5.0&lt;/code>, we have been gathering telemetry data to provide insights in to how our products are being used.&lt;/p>
+&lt;p>The following data is collected:&lt;/p>
+&lt;ul>
+&lt;li>Version of application in use&lt;/li>
+&lt;li>OS / platform of the device&lt;/li>
+&lt;li>What commands have been invoked (including command args)&lt;/li>
+&lt;li>Any errors that occurred when running the application&lt;/li>
+&lt;/ul>
+&lt;p>We understand that there will be some users who prefer to have no telemetry data sent.
+For those users, we offer a version of PCT with the telemetry functionality disabled.&lt;/p>
+&lt;p>To install:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">&lt;li class="nav-item">
+&lt;a class="nav-link active tab-Unix"
+id="tabs-2-0-tab" data-toggle="tab" href="#tabs-2-0" role="tab" onclick="handleClick(&amp;#34;Unix&amp;#34;);"
+aria-controls="tabs-2-0" aria-selected="true">
+Unix
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Windows"
+id="tabs-2-1-tab" data-toggle="tab" href="#tabs-2-1" role="tab" onclick="handleClick(&amp;#34;Windows&amp;#34;);"
+aria-controls="tabs-2-1" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>&lt;/ul>
+&lt;div class="tab-content" id="tabs-2-content">&lt;div class="tab-pane fade show active"
+id="tabs-2-0" role="tabpanel" aria-labelled-by="tabs-2-0-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">curl -L https://pup.pt/pdkgo/install.sh | sh -s -- --no-telemetry&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-2-1" role="tabpanel" aria-labelled-by="tabs-2-1-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>https://pup.pt/pdkgo/install.ps1)&lt;span style="color:#f1fa8c">; Install-Pct -NoTelemetry }&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>This will install the latest release of PCT, without telemetry functionality, to &lt;code>~/.puppetlabs/pct&lt;/code>.&lt;/p></description></item><item><title>Pct: Quick Start Guide</title><link>https://puppetlabs.github.io/devx/pct/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/quick-start/</guid><description>
+&lt;h2 id="quick-start-guide">Quick Start Guide&lt;/h2>
+&lt;p>This quick start guide will show you how to:&lt;/p>
+&lt;ul>
+&lt;li>Create a &amp;ldquo;bare bones&amp;rdquo; Puppet module from the &lt;code>puppet-module-base&lt;/code> project template&lt;/li>
+&lt;li>Add a Puppet Class to the module&lt;/li>
+&lt;li>Add a Github Actions Workflow to test the module against the currently supported Puppet versions&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-create-a-puppet-module">&lt;strong>STEP 1:&lt;/strong> Create a Puppet Module&lt;/h3>
+&lt;p>Let&amp;rsquo;s name our module &lt;code>test_module&lt;/code> using the &lt;code>-n&lt;/code> flag:
+&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_module.gif?raw=true" alt="new_project_template">&lt;/p>
+&lt;h3 id="step-2-add-a-new-class">&lt;strong>STEP 2:&lt;/strong> Add a New Class&lt;/h3>
+&lt;p>If we &lt;code>cd&lt;/code> in to the module root dir, everything will get deployed with the correct layout:
+&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_class.gif?raw=true" alt="new_class">&lt;/p>
+&lt;h3 id="step-3-add-a-github-actions-workflow">&lt;strong>STEP 3:&lt;/strong> Add a Github Actions Workflow&lt;/h3>
+&lt;p>Want to know what configurable parameters are availble for a template and their defaults?
+Run &lt;code>pct new --info &amp;lt;TEMPLATE_AUTHOR&amp;gt;/&amp;lt;TEMPLATE_ID&amp;gt;&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_info.gif?raw=true" alt="new_info">&lt;/p>
+&lt;p>We&amp;rsquo;re happy with those defaults, so let&amp;rsquo;s deploy this item.&lt;/p>
+&lt;p>Since we&amp;rsquo;re outside the module root dir, we&amp;rsquo;ll use the &lt;code>-o&lt;/code> option to point at the root dir:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_ghactions.gif?raw=true" alt="new_info">&lt;/p></description></item><item><title>Pct: Writing Templates</title><link>https://puppetlabs.github.io/devx/pct/usage/write-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/usage/write-template/</guid><description>
+&lt;h2 id="writing-templates">Writing Templates&lt;/h2>
+&lt;h3 id="structure">Structure&lt;/h3>
+&lt;p>A PCT is an archive containing a templated set of files and folders that represent a completed set of content. Files and folders stored in the template aren&amp;rsquo;t limited to formal Puppet project types. Source files and folders may consist of any content that you wish to create when the template is used, even if the template engine produces just one file as its output.&lt;/p>
+&lt;h3 id="location">Location&lt;/h3>
+&lt;p>You can specify the location of your templates using the &lt;code>--templatepath&lt;/code> option:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct new my-name/my-custom-project --templatepath /home/me/templates
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="composition">Composition&lt;/h3>
+&lt;p>A PCT must contain a &lt;code>pct-config.yml&lt;/code> in the root directory, alongside a &lt;code>content&lt;/code> directory.&lt;/p>
+&lt;p>The &lt;code>content&lt;/code> directory contains the files and folders required to produce the &lt;code>project&lt;/code> or &lt;code>item&lt;/code>.&lt;/p>
+&lt;p>To mark a file as a template, use the &lt;code>.tmpl&lt;/code> extension. Templated files can also use the global variable of &lt;code>{{pct_name}}&lt;/code> to access the input from the &lt;code>--name&lt;/code> cli argument.&lt;/p>
+&lt;div class="alert alert-light" role="alert">
+Folders within the &lt;code>content&lt;/code> directory can also use the &lt;code>{{pct_name}}&lt;/code> variable
+&lt;/div>
+&lt;p>Example template file names:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">myConfig.json.tmpl
+&lt;span style="color:#ff79c6">{{&lt;/span>pct_name&lt;span style="color:#ff79c6">}}&lt;/span>_spec.rb
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-light" role="alert">
+One, all or none of the files can be templated.
+&lt;/div>
+&lt;h4 id="pct-configyml">pct-config.yml&lt;/h4>
+&lt;p>Format of pct-config.yml&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">---
+&lt;span style="color:#ff79c6">template&lt;/span>:
+&lt;span style="color:#ff79c6">id&lt;/span>: &amp;lt;a unique name&amp;gt;
+&lt;span style="color:#ff79c6">author&lt;/span>: &amp;lt;name|username|orgname|handle|etc&amp;gt;
+&lt;span style="color:#ff79c6">type&lt;/span>: &amp;lt;&amp;#39;item&amp;#39; or &amp;#39;project&amp;#39;&amp;gt;
+&lt;span style="color:#ff79c6">display&lt;/span>: &amp;lt;a human readable name&amp;gt;
+&lt;span style="color:#ff79c6">version&lt;/span>: &amp;lt;semver&amp;gt;
+&lt;span style="color:#ff79c6">url&lt;/span>: &amp;lt;url to project repo&amp;gt;
+&amp;lt;template parameters&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-light" role="alert">
+Template &lt;code>id&lt;/code> and &lt;code>author&lt;/code> must not contain spaces or special characters. We recommend using a hyphen to break up the identifier.
+&lt;/div>
+&lt;p>Example pct-config.yml:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">---
+&lt;span style="color:#ff79c6">template&lt;/span>:
+&lt;span style="color:#ff79c6">id&lt;/span>: example-template
+&lt;span style="color:#ff79c6">author&lt;/span>: myorgname
+&lt;span style="color:#ff79c6">type&lt;/span>: project
+&lt;span style="color:#ff79c6">display&lt;/span>: Example
+&lt;span style="color:#ff79c6">version&lt;/span>: &lt;span style="color:#bd93f9">0.1.0&lt;/span>
+&lt;span style="color:#ff79c6">url&lt;/span>: https://github.com/puppetlabs/example-template
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example structure for &lt;code>example-template&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; tree ~/templates/example-template
+/Users/me/templates/example-template
+├── content
+│ └── example.txt.tmpl
+└── pct-config.yml
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="templating-language">Templating Language&lt;/h3>
+&lt;p>PCT uses &lt;a href="https://golang.org/pkg/text/template/#hdr-Actions">Go&amp;rsquo;s templating language&lt;/a>.&lt;/p>
+&lt;p>Example pct-config.yml with parameters:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">---
+&lt;span style="color:#ff79c6">template&lt;/span>:
+&lt;span style="color:#ff79c6">id&lt;/span>: example-template-with-params
+&lt;span style="color:#ff79c6">author&lt;/span>: myorgname
+&lt;span style="color:#ff79c6">type&lt;/span>: project
+&lt;span style="color:#ff79c6">display&lt;/span>: Example with Parameters
+&lt;span style="color:#ff79c6">version&lt;/span>: &lt;span style="color:#bd93f9">0.1.0&lt;/span>
+&lt;span style="color:#ff79c6">url&lt;/span>: https://github.com/puppetlabs/pct-example-with-params
+&lt;span style="color:#ff79c6">example_params&lt;/span>:
+&lt;span style="color:#ff79c6">foo&lt;/span>: &lt;span style="color:#f1fa8c">&amp;#34;bar&amp;#34;&lt;/span>
+&lt;span style="color:#ff79c6">isPuppet&lt;/span>: &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;span style="color:#ff79c6">colours&lt;/span>:
+- &lt;span style="color:#f1fa8c">&amp;#34;Red&amp;#34;&lt;/span>
+- &lt;span style="color:#f1fa8c">&amp;#34;Blue&amp;#34;&lt;/span>
+- &lt;span style="color:#f1fa8c">&amp;#34;Green&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the above template &lt;code>example-template-with-params&lt;/code> the parameters can be accessed in a &lt;code>.tmpl&lt;/code> file like so:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">{{.example_params.foo}}
+{{.example_params.isPuppet}}
+{{.example_params.colours}}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>outputs:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">bar
+&amp;lt;no value&amp;gt;
+[Red Blue Green]
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>As a template author you can chose your own parameters and parameter structure so long as it is &lt;a href="https://yaml.org/spec/1.2/spec.html">valid YAML&lt;/a>. Then utilise the GO templating language to display or iterate over these.&lt;/p>
+&lt;p>For most templates, we believe that you can do most of the things you would want with these common template controls:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#6272a4">// Outputs the value of `foo` defined within pct.yml
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span>{{.example_template.foo}}
+&lt;span style="color:#6272a4">// A conditional
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span>{{&lt;span style="color:#ff79c6">if&lt;/span> .example_template.isPuppet}}
+&lt;span style="color:#f1fa8c">&amp;#34;boo :(&amp;#34;&lt;/span>
+{{&lt;span style="color:#ff79c6">else&lt;/span>}}
+&lt;span style="color:#f1fa8c">&amp;#34;yay!&amp;#34;&lt;/span>
+{{end}}
+&lt;span style="color:#6272a4">// Loops over all &amp;#34;colours&amp;#34; and renders each using {{.}}
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span>{{&lt;span style="color:#ff79c6">range&lt;/span> .example_template.colours}} {{.}} {{end}}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For more examples look at the existing templates provided in the &lt;strong>Default Template Location&lt;/strong>.&lt;/p>
+&lt;h3 id="dos-and-donts">Dos and Don&amp;rsquo;ts&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>project&lt;/code> templates should provide all the code necessary to create a project from scratch and no more.&lt;/li>
+&lt;li>Do not include configuration files that can be added via an &lt;code>item&lt;/code> template later by an end user, for example, CI job configuration.&lt;/li>
+&lt;li>Templates should be self documenting to help guide new users on how to use the file that has been created.&lt;/li>
+&lt;/ul></description></item><item><title>Pct: About PCT</title><link>https://puppetlabs.github.io/devx/pct/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/about/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Puppet Content Templates (PCT) codify a structure to produce content for any Puppet Product that can be authored by Puppet Product Teams or external users without direct help of the PDK team.&lt;/p>
+&lt;p>PCT can create any type of a Puppet Product project: Puppet control repo, Puppet Module, Bolt project, etc. It can create one or more independent files, such as CI files or gitignores. This can be as simple as a name for a Puppet Class, a set of CI files to add to a Puppet Module, or as complex as a complete Puppet Control repo with roles and profiles.&lt;/p>
+&lt;p>These are meant to be ready-to-run, which means they put everything needed for a user to run the project from the moment after creation. This solves the &amp;lsquo;blank page&amp;rsquo; problem, where a few files are in place but the user does not know what the next steps are.&lt;/p>
+&lt;div class="alert alert-light" role="alert">
+PCT is currently in an EXPERIMENTAL phase and feedback is encouraged via &lt;a href="https://github.com/puppetlabs/pdkgo/discussions">pdkgo/discussions&lt;/a> and starting a &lt;code>feedback&lt;/code> post.
+&lt;/div></description></item><item><title>Pct: Contact DevX about PCT</title><link>https://puppetlabs.github.io/devx/pct/contact/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/contact/contact/</guid><description>
+&lt;h2 id="requesting-a-feature">Requesting a feature&lt;/h2>
+&lt;p>Open a new feature request in our &lt;a href="https://github.com/puppetlabs/pdkgo/issues/new">Github discussion&lt;/a> page.&lt;/p>
+&lt;h2 id="reporting-problems">Reporting Problems&lt;/h2>
+&lt;p>If you&amp;rsquo;re having trouble with the experimental PCT tool, please follow these instructions
+to file an issue on our GitHub repository: &lt;a href="https://github.com/puppetlabs/pdkgo/issues/new">https://github.com/puppetlabs/pdkgo/issues/new&lt;/a>&lt;/p>
+&lt;p>Make sure to fill in the information that is requested in the issue template as it
+will help us investigate the problem more quickly.&lt;/p></description></item><item><title>Pct: Overriding Template Defaults</title><link>https://puppetlabs.github.io/devx/pct/usage/override-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/usage/override-template/</guid><description>
+&lt;h2 id="overriding-template-defaults">Overriding Template Defaults&lt;/h2>
+&lt;p>Perhaps you use a template often and find that you set the same values over and over?
+As a template user, you can choose to override the default values specified by a template author.&lt;/p>
+&lt;div class="alert alert-light" role="alert">
+To view the default parameters for a template run &lt;code>pct new --info &amp;lt;TEMPLATE_ID&amp;gt;&lt;/code>.
+&lt;/div>
+&lt;p>To override these defaults you need to create a &lt;code>pct.yml&lt;/code> containing the template id along with the values you wish to override.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">example_template&lt;/span>:
+&lt;span style="color:#ff79c6">foo&lt;/span>: &lt;span style="color:#f1fa8c">&amp;#34;wibble&amp;#34;&lt;/span>
+&lt;span style="color:#ff79c6">isPuppet&lt;/span>: &lt;span style="color:#ff79c6">false&lt;/span>
+&lt;span style="color:#ff79c6">colours&lt;/span>:
+- &lt;span style="color:#f1fa8c">&amp;#34;Red&amp;#34;&lt;/span>
+- &lt;span style="color:#f1fa8c">&amp;#34;Blue&amp;#34;&lt;/span>
+&lt;span style="color:#ff79c6">another_template&lt;/span>:
+&lt;span style="color:#ff79c6">key&lt;/span>: &lt;span style="color:#f1fa8c">&amp;#34;value&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-light" role="alert">
+&lt;p>You don&amp;rsquo;t need to override everything&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">example_template&lt;/span>:
+&lt;span style="color:#ff79c6">isPuppet&lt;/span>: &lt;span style="color:#ff79c6">false&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h3 id="user-level-configuration">User level configuration&lt;/h3>
+&lt;p>Placing a &lt;code>pct.yml&lt;/code> within &lt;code>$HOME/.pdk/&lt;/code> allows you to create global overrides. Everytime you generate content from a template the configuration will be used.&lt;/p>
+&lt;h3 id="workspace-configuration">Workspace configuration&lt;/h3>
+&lt;p>You may also place a &lt;code>pct.yml&lt;/code> within a workspace.&lt;/p>
+&lt;p>Running &lt;code>pct new&lt;/code> within a directory makes the current working directory your workspace.
+If you specify an &lt;code>--outputdir&lt;/code> that location is your workspace.&lt;/p>
+&lt;p>The configuration specified in a workspace &lt;code>pct.yml&lt;/code> will override any configuration found within the user level configuration at &lt;code>$HOME/.pdk/pct.yml&lt;/code>&lt;/p></description></item><item><title>Pct: Sharing Templates</title><link>https://puppetlabs.github.io/devx/pct/usage/sharing-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/usage/sharing-templates/</guid><description>
+&lt;h2 id="sharing-templates">Sharing Templates&lt;/h2>
+&lt;p>After you&amp;rsquo;ve written your own template you may wish to share it with other members of your team or the wider Puppet community. Work is underway to improve this initial functionality.&lt;/p>
+&lt;h3 id="pct-build">pct build&lt;/h3>
+&lt;p>This command will attempt to package the current working directory. You can change the directory to pack by providing &lt;code>--sourcedir&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct build &lt;span style="color:#ff79c6">[&lt;/span>--sourcedir &amp;lt;dir&amp;gt;&lt;span style="color:#ff79c6">][&lt;/span>--targetdir &amp;lt;dir&amp;gt;&lt;span style="color:#ff79c6">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>build&lt;/code> command will ensure that the directory that you are attempting to package will produce a valid Puppet Content Template by looking for a &lt;code>pct-config.yml&lt;/code> and a &lt;code>content&lt;/code> directory.&lt;/p>
+&lt;p>The resulting &lt;code>tar.gz&lt;/code> package will be created by default in &lt;code>$cwd/pkg&lt;/code>. You can change the directory the package is created in by providing &lt;code>--targetdir&lt;/code>.&lt;/p>
+&lt;h3 id="installing-template-packages">Installing template packages&lt;/h3>
+&lt;p>Packages created using the &lt;code>build&lt;/code> command can be installed by extracting the &lt;code>tar.gz&lt;/code> into the &lt;strong>Default Template Location&lt;/strong>.&lt;/p>
+&lt;h4 id="local-archive">Local archive&lt;/h4>
+&lt;p>Packages created using the &lt;code>build&lt;/code> command can also be installed with the &lt;code>pct install&lt;/code> command.&lt;/p>
+&lt;p>For example, this command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct install ~/my-template-1.2.3.tar.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will install the template contained in &lt;code>my-template-1.2.3.tar.gz&lt;/code> to the default template location.&lt;/p>
+&lt;h4 id="remote-archive">Remote archive&lt;/h4>
+&lt;p>Packages created using the &lt;code>build&lt;/code> command can be automatically downloaded and extracted with &lt;code>pct install&lt;/code> so long as you know the URL to where the archive is.&lt;/p>
+&lt;p>For example, this command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct install https://packages.mycompany.com/pct/my-template-1.2.3.tar.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will attempt to download the PCT template from the specified url and then afterward install it like any other locally available PCT template archive.&lt;/p>
+&lt;h4 id="remote-git-repository">Remote Git Repository&lt;/h4>
+&lt;p>&lt;strong>Git&lt;/strong> must be installed for this feature to work. The git repository must contain only one template and must be structured with the &lt;code>pct-config.yml&lt;/code> file and the &lt;code>content&lt;/code> directory in the root directory of the repository.&lt;/p>
+&lt;p>For more information on template structures see the &lt;a href="https://github.com/puppetlabs/pdkgo#writing-templates">Writing Templates&lt;/a> section in the &lt;code>README&lt;/code>.&lt;/p>
+&lt;p>For example, this command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pct install --git-uri https://github.com/myorg/myawesometemplate
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will attempt to clone the PCT template from the git repository at the specified URI and install to the default template location.&lt;/p></description></item></channel></rss>

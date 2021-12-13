@@ -1,0 +1,140 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – PRM</title><link>https://puppetlabs.github.io/devx/prm/</link><description>Recent content in PRM on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/prm/index.xml" rel="self" type="application/rss+xml"/><item><title>Prm: Changelog</title><link>https://puppetlabs.github.io/devx/prm/changelog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/changelog/</guid><description>
+&lt;h1 id="changelog">Changelog&lt;/h1>
+&lt;p>All notable changes to this project will be documented in this file.&lt;/p>
+&lt;p>The format is based on &lt;a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog&lt;/a>,
+and this project adheres to &lt;a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning&lt;/a>.&lt;/p>
+&lt;h2 id="unreleased">&lt;a href="https://github.com/puppetlabs/prm/compare/9d7ff6acd89f19cd24492acc9058c4c5752bcbe5..main">Unreleased&lt;/a>&lt;/h2></description></item><item><title>Prm: Contributing</title><link>https://puppetlabs.github.io/devx/prm/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/contributing/</guid><description>
+&lt;h1 id="contributing">Contributing&lt;/h1>
+&lt;p>Hi! Thanks for your interest in contributing to the Puppet Development Kit!&lt;/p>
+&lt;p>Community contributions are essential for keeping Puppet great.
+We simply can&amp;rsquo;t access the huge number of platforms and myriad configurations for running Puppet.
+We want to keep it as easy as possible to contribute changes that get things working in your environment.
+There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on top of things.&lt;/p>
+&lt;p>We accept pull requests for bug fixes and features where we&amp;rsquo;ve discussed the approach in an issue and given the go-ahead for a community member to work on it.
+We&amp;rsquo;d also love to hear about ideas for new features as Github Discussion.&lt;/p>
+&lt;p>Please do:&lt;/p>
+&lt;ul>
+&lt;li>Open an issue if things aren&amp;rsquo;t working as expected.&lt;/li>
+&lt;li>Open a Github Discussion to propose a significant change.&lt;/li>
+&lt;li>Open a pull request to fix a bug.&lt;/li>
+&lt;li>Open a pull request to fix documentation about a command.&lt;/li>
+&lt;li>Open a pull request for any issue labelled help wanted or good first issue.&lt;/li>
+&lt;/ul>
+&lt;h2 id="building-the-project">Building the project&lt;/h2>
+&lt;p>Prerequisites:&lt;/p>
+&lt;ul>
+&lt;li>Go 1.16+&lt;/li>
+&lt;/ul>
+&lt;p>To build PRM, run the following command:&lt;/p>
+&lt;blockquote>
+&lt;p>These build scripts produce a binary for the current platform only.
+These scripts are meant for local testing.
+We use a Github Action to release this product.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; &lt;span style="color:#6272a4"># on nix&lt;/span>
+&amp;gt; ./build.sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#6272a4"># on windows&lt;/span>
+&amp;gt; ./build.ps1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To run the new binary:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; ./prm &lt;span style="color:#ff79c6">[&lt;/span>command&lt;span style="color:#ff79c6">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To test the PRM command, run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; go &lt;span style="color:#8be9fd;font-style:italic">test&lt;/span> ./...
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To run the acceptance tests, ensure that you have built the PRM binary using the build scripts, then:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8be9fd;font-style:italic">TEST_ACCEPTANCE&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#8be9fd;font-style:italic">true&lt;/span> go &lt;span style="color:#8be9fd;font-style:italic">test&lt;/span> -count&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span> -v github.com/puppetlabs/prm/acceptance
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="running-the-project">Running the project&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; go run main.go
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="building-cross-platform-binaries">Building Cross Platform binaries&lt;/h2>
+&lt;p>Prerequisites:&lt;/p>
+&lt;ul>
+&lt;li>Go 1.16+&lt;/li>
+&lt;li>goreleaser 0.16+&lt;/li>
+&lt;/ul>
+&lt;p>To build the PRM for more than your current platform, use &lt;a href="https://goreleaser.com/quick-start/#dry-run">&lt;code>GoReleaser&lt;/code>&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&amp;gt; goreleaser --snapshot --skip-publish --rm-dist
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will ouput a set of binaries in the &lt;code>dist&lt;/code> folder.&lt;/p>
+&lt;h2 id="submitting-a-pull-request">Submitting a Pull Request&lt;/h2>
+&lt;ol>
+&lt;li>Create a new branch &lt;code>git checkout -b my-branch-name&lt;/code>&lt;/li>
+&lt;li>Make you change, add tests, and ensure tests pass&lt;/li>
+&lt;li>Make sure your commit messages are in the proper format.
+If the commit addresses an issue filed in the project, start the first line of the commit with the prefix &lt;code>GH-&lt;/code> and the issue number in parentheses &lt;code>(GH-111)&lt;/code>.
+After leave a detailed explanation of your change, so a person in the future can understand what your work does.&lt;/li>
+&lt;li>Submit a pull request (i.e. using the Github commandline: &lt;code>gh pr create --web&lt;/code>)&lt;/li>
+&lt;/ol>
+&lt;h2 id="making-trivial-changes">Making Trivial Changes&lt;/h2>
+&lt;p>For changes of a trivial nature, it is not always necessary to create a new ticket.
+In this case, it is appropriate to start the first line of a commit with one of (docs), (maint), or (packaging) instead of a ticket number.&lt;/p>
+&lt;h2 id="additional-resources">Additional Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://puppet.com/community/community-guidelines">Puppet community guidelines&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://cla.puppet.com/">Contributor License Agreement&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://help.github.com/">General GitHub documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://help.github.com/articles/creating-a-pull-request/">GitHub pull request documentation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Prm: Readme</title><link>https://puppetlabs.github.io/devx/prm/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/readme/</guid><description>
+&lt;h1 id="puppet-runtime-manager">Puppet Runtime Manager&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="#puppet-runtime-manager">Puppet Runtime Manager&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#overview">Overview&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#installing">Installing&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#unix-systems">Unix Systems&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#windows-systems">Windows Systems&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#requesting-a-feature">Requesting a feature&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#reporting-problems">Reporting Problems&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#installing-telemetry-free-version">Installing Telemetry Free Version&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#unix-systems-1">Unix Systems&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#windows-systems-1">Windows Systems&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The Puppet Runtime Manager (PRM) is a tool for validating Puppet content and for running arbitrary development/maintenance tasks against that content.&lt;/p>
+&lt;blockquote>
+&lt;p>:warning: PRM is currently in an EXPERIMENTAL phase and feedback is encouraged via &lt;a href="https://github.com/puppetlabs/prm/discussions">prm/discussions&lt;/a> and starting a &lt;code>feedback&lt;/code> post.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="installing">Installing&lt;/h2>
+&lt;p>While PRM is in early release, we provide an archive and a simple script to unpack it.
+When we move closer to a full release we will add a platform specific installer.
+Use the &lt;code>install.[ps1|sh]&lt;/code> script, depending upon your OS:&lt;/p>
+&lt;h3 id="unix-systems">Unix Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/prm/install.sh | sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="windows-systems">Windows Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ps" data-lang="ps">&lt;span style="color:#50fa7b">iex&lt;/span> &lt;span style="color:#50fa7b">&amp;#34;&amp;amp;&lt;/span>{ &lt;span style="color:#50fa7b">$&lt;/span>&lt;span style="color:#f1fa8c">(irm https://pup.pt/prm/install.ps1)&lt;/span>&lt;span style="color:#50fa7b">;&lt;/span> &lt;span style="color:#50fa7b">Install-Prm&lt;/span> }&lt;span style="color:#50fa7b">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PRM to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p>
+&lt;!-- This gif needs to be created once the scripts are callable -->
+&lt;!-- ![install_prm](docs/_resources/install_and_export_path.gif) -->
+&lt;blockquote>
+&lt;p>:warning: If you do not use the install script and are extracting the archive yourself, be sure to use the fully qualified path to &lt;code>~/.puppetlabs/prm&lt;/code> on *nix or &lt;code>$HOME/.puppetlabs/prm&lt;/code> on Windows when you set your &lt;code>PATH&lt;/code> environment variable.&lt;/p>
+&lt;/blockquote>
+&lt;p>A version of the product, with telemetry functionality disabled, is available too.
+See &lt;a href="#installing-telemetry-free-version">here&lt;/a> for instructions on how to install it.&lt;/p>
+&lt;h2 id="requesting-a-feature">Requesting a feature&lt;/h2>
+&lt;p>Open a new feature request in our &lt;a href="https://github.com/puppetlabs/prm/discussions/new">Github discussion&lt;/a> page.&lt;/p>
+&lt;h2 id="reporting-problems">Reporting Problems&lt;/h2>
+&lt;p>If you&amp;rsquo;re having trouble with the experimental PRM tool, please follow these instructions
+to file an issue on our GitHub repository: &lt;a href="https://github.com/puppetlabs/prm/issues/new">https://github.com/puppetlabs/prm/issues/new&lt;/a>&lt;/p>
+&lt;p>Make sure to fill in the information that is requested in the issue template as it
+will help us investigate the problem more quickly.&lt;/p>
+&lt;h2 id="installing-telemetry-free-version">Installing Telemetry Free Version&lt;/h2>
+&lt;p>We gather telemetry data to provide insights into how our products are being used.&lt;/p>
+&lt;p>The following data is collected:&lt;/p>
+&lt;ul>
+&lt;li>Version of application in use&lt;/li>
+&lt;li>OS / platform of the device&lt;/li>
+&lt;li>What commands have been invoked (including command args)&lt;/li>
+&lt;li>Any errors that occurred when running the application&lt;/li>
+&lt;/ul>
+&lt;p>We understand that there will be some users who prefer to have no telemetry data sent.
+For those users, we offer a version of PRM with the telemetry functionality disabled.&lt;/p>
+&lt;p>To install:&lt;/p>
+&lt;h3 id="unix-systems-1">Unix Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/prm/install.sh | sh -s -- --no-telemetry
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="windows-systems-1">Windows Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ps" data-lang="ps">&lt;span style="color:#50fa7b">iex&lt;/span> &lt;span style="color:#50fa7b">&amp;#34;&amp;amp;&lt;/span>{ &lt;span style="color:#50fa7b">$&lt;/span>&lt;span style="color:#f1fa8c">(irm https://pup.pt/prm/install.ps1)&lt;/span>&lt;span style="color:#50fa7b">;&lt;/span> &lt;span style="color:#50fa7b">Install-Prm&lt;/span> &lt;span style="color:#50fa7b">-NoTelemetry&lt;/span> }&lt;span style="color:#50fa7b">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PRM, without telemetry functionality, to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p></description></item></channel></rss>
