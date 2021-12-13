@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://devx.github.io/"
 title = "DevX Tooling Docs"
   
 enableRobotsTXT = true
