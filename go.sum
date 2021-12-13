@@ -1,4 +1,8 @@
 github.com/puppetlabs/pdkgo/docs/md v0.0.0-20211111111015-bdc60e99ddf9 h1:p4QeMjAI73aSfbMA6odtdjuVNYcNN0bDWvz5xPAcE0I=
 github.com/puppetlabs/pdkgo/docs/md v0.0.0-20211111111015-bdc60e99ddf9/go.mod h1:ZP68DAFqSxcmtVQ4WNS1uzO5ruFuL0geGIXoznIZx6w=
+github.com/puppetlabs/pdkgo/docs/md v0.0.0-20211213102940-6d6cece0abd5 h1:s8WnvHEozdxlJcAnbzrLyXYMvV0LQlMuAVKSEuPfNPI=
+github.com/puppetlabs/pdkgo/docs/md v0.0.0-20211213102940-6d6cece0abd5/go.mod h1:ZP68DAFqSxcmtVQ4WNS1uzO5ruFuL0geGIXoznIZx6w=
 github.com/puppetlabs/prm/docs/md v0.0.0-20211111111111-076cd30c64a0 h1:83f/N6mGeWcOnzLXAJiaYC5afffOHeM9eRctSZTiqL8=
 github.com/puppetlabs/prm/docs/md v0.0.0-20211111111111-076cd30c64a0/go.mod h1:spfr7W49WwAzw1dddZd5W0aZMzbIDj3Dm9x6+ecAbW4=
+github.com/puppetlabs/prm/docs/md v0.0.0-20211213150448-3fbcdb268bd4 h1:y9DBdt3lm5KRJapN7y4F3B92zbrSy2B32BzaZP4mhj4=
+github.com/puppetlabs/prm/docs/md v0.0.0-20211213150448-3fbcdb268bd4/go.mod h1:spfr7W49WwAzw1dddZd5W0aZMzbIDj3Dm9x6+ecAbW4=
