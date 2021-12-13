@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://puppetlabs.github.io/devx/"
 title = "DevX Tooling Docs"
   
 enableRobotsTXT = true
