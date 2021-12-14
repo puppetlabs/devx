@@ -31,3 +31,8 @@ When using the `get` command, if the `cannot find module providing package` mess
 
 `hugo mod clean --all`
 
+## Updating the live site
+
+The site will be deployed when commits are merged into the main branch of the repo.
+
+Alternatively, the site can be deployed by running the [`github_pages` workflow action](https://github.com/puppetlabs/devx/actions/workflows/gh-pages.yml).
