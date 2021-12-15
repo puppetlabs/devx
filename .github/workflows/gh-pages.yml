@@ -38,6 +38,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
+      - run: hugo mod get -u
       - run: hugo --minify
 
       - name: Deploy
