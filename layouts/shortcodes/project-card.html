@@ -6,7 +6,7 @@
 {{ $cardType := .Get "cardType" | default "card-header"}}
 {{ $docsUrl :=  .Get "docsUrl"}}
 {{ $installUrl :=  .Get "installUrl"}}
-<div class="card text-center ml-5 mr-5">
+<div class="card text-center">
   {{- if $url -}}<a href="{{ $url }}" class="card-link stretched-link" title="{{ $title }}">{{- end -}}
   <div class="{{ $cardType }}">
     <div class="d-flex justify-content-center">

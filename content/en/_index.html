@@ -10,7 +10,7 @@ linkTitle = "DevX"
 		<a class="btn btn-lg btn-primary mr-3 mb-4" href="#tools">
 			View Tools <i class="fas fa-arrow-circle-down ml-2"></i>
 		</a>
-		<a class="btn btn-lg btn-secondary mr-3 mb-4" href="/about">
+		<a class="btn btn-lg btn-secondary mr-3 mb-4" href="blog/2021/09/14/the-future-of-the-puppet-developer-kit-pdk/">
 			About <i class="fas fa-bookmark ml-2"></i>
 		</a>
 	</div>
@@ -19,7 +19,7 @@ linkTitle = "DevX"
 
 <div id="tools"></div>
 
-<div class="card-deck center mt-5 mb-5 container-md mx-auto">
+<div class="card-deck p-0 center mt-5 mb-5 container-md mx-auto">
 	{{< project-card title="PCT" icon="fa-align-left" installUrl="pct/install" docsUrl="pct" >}} 
 	Puppet Content Templates (PCT) codify a structure to produce content for any Puppet Product that can be authored by Puppet Product Teams or external users without direct help of the PDK team. 
 	{{< /project-card>}}
@@ -30,9 +30,12 @@ linkTitle = "DevX"
 </div>
 
 {{< blocks/section color="dark">}}
-{{% blocks/feature icon="fa-lightbulb" title="All new documentation site!" %}}
+{{% blocks/feature icon="fas fa-book-reader" title="All new documentation site!" %}}
 This site is the central location for Puppet DevX Tooling documentation.
+{{% /blocks/feature %}}
 
+
+{{% blocks/feature icon="fa-lightbulb" title="New streamlined tools" %}}
 Find out how Puppet Content Templates (PCT) and the Puppet Runtime Manager (PRM) can help you with your Puppet code development and validation.
 {{% /blocks/feature %}}
 
@@ -40,11 +43,4 @@ Find out how Puppet Content Templates (PCT) and the Puppet Runtime Manager (PRM)
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" %}}
 We do a [Pull Request](https://github.com/puppetlabs/devx/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/puppetize" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-
 {{< /blocks/section>}}
