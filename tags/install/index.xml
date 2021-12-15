@@ -1,0 +1,36 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – install</title><link>https://puppetlabs.github.io/devx/tags/install/</link><description>Recent content in install on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/tags/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Pct: Installation</title><link>https://puppetlabs.github.io/devx/pct/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/install/</guid><description>
+&lt;p>While the PCT is in early release, we provide an archive and a simple script to unpack it. When we move closer to a full release we will add a platform specific installer. Use the &lt;code>install.[ps1|sh]&lt;/code> script, depending upon your OS:&lt;/p>
+&lt;h3 id="bash">Bash&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/pdkgo/install.sh | sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="powershell">PowerShell&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>&lt;span style="color:#f1fa8c">&amp;#39;https://pup.pt/pdkgo/install.ps1&amp;#39;&lt;/span>)&lt;span style="color:#f1fa8c">; Install-Pct }&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PCT to &lt;code>~/.puppetlabs/pct&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/install_and_export_path.gif?raw=true" alt="install_pct">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Warning!&lt;/strong>&lt;/p>
+&lt;p>If you do not use the install script and are extracting the archive yourself, be sure to use the fully qualified path to &lt;code>~/.puppetlabs/pct&lt;/code> on *nix or &lt;code>$HOME/.puppetlabs/pct&lt;/code> on Windows when you set your &lt;code>PATH&lt;/code> environment variable.&lt;/p>
+&lt;/blockquote>
+&lt;p>A version of the product, with telemetry functionality disabled, is available too.
+See &lt;a href="#installing-telemetry-free-version">here&lt;/a> for instructions on how to install it.&lt;/p>
+&lt;h3 id="setting-up-tab-completion">Setting up Tab Completion&lt;/h3>
+&lt;p>After installation, we&amp;rsquo;d highly recommend setting up tab completion for your shell to ensure the best possible experience.&lt;/p>
+&lt;p>PCT has built in tab completion support for the following shells: &lt;code>bash&lt;/code>, &lt;code>zsh&lt;/code>, &lt;code>fish&lt;/code> and &lt;code>powershell&lt;/code>.&lt;/p>
+&lt;p>To view the install instructions, access the &lt;code>--help&lt;/code> menu in &lt;code>pct completion&lt;/code> and follow the instructions for your shell:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/completion_setup.gif?raw=true" alt="tab_completion">&lt;/p>
+&lt;h2 id="installing-telemetry-free-version">Installing Telemetry Free Version&lt;/h2>
+&lt;p>As of &lt;code>0.5.0&lt;/code>, we have been gathering telemetry data to provide insights in to how our products are being used.&lt;/p>
+&lt;p>The following data is collected:&lt;/p>
+&lt;ul>
+&lt;li>Version of application in use&lt;/li>
+&lt;li>OS / platform of the device&lt;/li>
+&lt;li>What commands have been invoked (including command args)&lt;/li>
+&lt;li>Any errors that occurred when running the application&lt;/li>
+&lt;/ul>
+&lt;p>We understand that there will be some users who prefer to have no telemetry data sent.
+For those users, we offer a version of PCT with the telemetry functionality disabled.&lt;/p>
+&lt;p>To install:&lt;/p>
+&lt;h3 id="bash-1">Bash&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/pdkgo/install.sh | sh -s -- --no-telemetry
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="powershell-1">PowerShell&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>&lt;span style="color:#f1fa8c">&amp;#39;https://pup.pt/pdkgo/install.ps1&amp;#39;&lt;/span>)&lt;span style="color:#f1fa8c">; Install-Pct -NoTelemetry }&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PCT, without telemetry functionality, to &lt;code>~/.puppetlabs/pct&lt;/code>.&lt;/p></description></item></channel></rss>

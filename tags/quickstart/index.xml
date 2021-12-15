@@ -1,0 +1,20 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – quickstart</title><link>https://puppetlabs.github.io/devx/tags/quickstart/</link><description>Recent content in quickstart on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/tags/quickstart/index.xml" rel="self" type="application/rss+xml"/><item><title>Pct: Quick Start Guide</title><link>https://puppetlabs.github.io/devx/pct/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/pct/quick-start/</guid><description>
+&lt;p>This quick start guide will show you how to:&lt;/p>
+&lt;ul>
+&lt;li>Create a &amp;ldquo;bare bones&amp;rdquo; Puppet module from the &lt;code>puppet-module-base&lt;/code> project template&lt;/li>
+&lt;li>Add a Puppet Class to the module&lt;/li>
+&lt;li>Add a Github Actions Workflow to test the module against the currently supported Puppet versions&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-create-a-puppet-module">&lt;strong>STEP 1:&lt;/strong> Create a Puppet Module&lt;/h3>
+&lt;p>Let&amp;rsquo;s name our module &lt;code>test_module&lt;/code> using the &lt;code>-n&lt;/code> flag:
+&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_module.gif?raw=true" alt="new_project_template">&lt;/p>
+&lt;h3 id="step-2-add-a-new-class">&lt;strong>STEP 2:&lt;/strong> Add a New Class&lt;/h3>
+&lt;p>If we &lt;code>cd&lt;/code> in to the module root dir, everything will get deployed with the correct layout:
+&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_class.gif?raw=true" alt="new_class">&lt;/p>
+&lt;h3 id="step-3-add-a-github-actions-workflow">&lt;strong>STEP 3:&lt;/strong> Add a Github Actions Workflow&lt;/h3>
+&lt;p>Want to know what configurable parameters are availble for a template and their defaults?
+Run &lt;code>pct new --info &amp;lt;TEMPLATE_AUTHOR&amp;gt;/&amp;lt;TEMPLATE_ID&amp;gt;&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_info.gif?raw=true" alt="new_info">&lt;/p>
+&lt;p>We&amp;rsquo;re happy with those defaults, so let&amp;rsquo;s deploy this item.&lt;/p>
+&lt;p>Since we&amp;rsquo;re outside the module root dir, we&amp;rsquo;ll use the &lt;code>-o&lt;/code> option to point at the root dir:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_ghactions.gif?raw=true" alt="new_info">&lt;/p></description></item></channel></rss>
