@@ -95,7 +95,7 @@ id = "UA-00000000-0"
 section = ["HTML", "RSS"] #"print"
 
 [params]
-copyright = "Peter Murphy"
+copyright = "Puppet"
 #privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
