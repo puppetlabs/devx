@@ -1,10 +1,7 @@
-name: GitHub Pages
+name: Build Site
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main # Set a branch to deploy
+  pull_request:
 
 jobs:
   deploy:
@@ -39,8 +36,3 @@ jobs:
       - run: npm ci
       - run: hugo mod get -u
       - run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
