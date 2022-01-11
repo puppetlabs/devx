@@ -13,4 +13,71 @@ PCT is currently in an EXPERIMENTAL phase and feedback is encouraged via &lt;a h
 &lt;p>If you&amp;rsquo;re having trouble with the experimental PCT tool, please follow these instructions
 to file an issue on our GitHub repository: &lt;a href="https://github.com/puppetlabs/pdkgo/issues/new">https://github.com/puppetlabs/pdkgo/issues/new&lt;/a>&lt;/p>
 &lt;p>Make sure to fill in the information that is requested in the issue template as it
-will help us investigate the problem more quickly.&lt;/p></description></item></channel></rss>
+will help us investigate the problem more quickly.&lt;/p></description></item><item><title>Prm: Readme</title><link>https://puppetlabs.github.io/devx/prm/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/readme/</guid><description>
+&lt;h1 id="puppet-runtime-manager">Puppet Runtime Manager&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="#puppet-runtime-manager">Puppet Runtime Manager&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#overview">Overview&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#installing">Installing&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#unix-systems">Unix Systems&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#windows-systems">Windows Systems&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#requesting-a-feature">Requesting a feature&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#reporting-problems">Reporting Problems&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#installing-telemetry-free-version">Installing Telemetry Free Version&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#unix-systems-1">Unix Systems&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#windows-systems-1">Windows Systems&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The Puppet Runtime Manager (PRM) is a tool for validating Puppet content and for running arbitrary development/maintenance tasks against that content.&lt;/p>
+&lt;blockquote>
+&lt;p>:warning: PRM is currently in an EXPERIMENTAL phase and feedback is encouraged via &lt;a href="https://github.com/puppetlabs/prm/discussions">prm/discussions&lt;/a> and starting a &lt;code>feedback&lt;/code> post.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="installing">Installing&lt;/h2>
+&lt;p>While PRM is in early release, we provide an archive and a simple script to unpack it.
+When we move closer to a full release we will add a platform specific installer.
+Use the &lt;code>install.[ps1|sh]&lt;/code> script, depending upon your OS:&lt;/p>
+&lt;h3 id="unix-systems">Unix Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/prm/install.sh | sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="windows-systems">Windows Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ps" data-lang="ps">&lt;span style="color:#50fa7b">iex&lt;/span> &lt;span style="color:#50fa7b">&amp;#34;&amp;amp;&lt;/span>{ &lt;span style="color:#50fa7b">$&lt;/span>&lt;span style="color:#f1fa8c">(irm https://pup.pt/prm/install.ps1)&lt;/span>&lt;span style="color:#50fa7b">;&lt;/span> &lt;span style="color:#50fa7b">Install-Prm&lt;/span> }&lt;span style="color:#50fa7b">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PRM to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p>
+&lt;!-- This gif needs to be created once the scripts are callable -->
+&lt;!-- ![install_prm](docs/_resources/install_and_export_path.gif) -->
+&lt;blockquote>
+&lt;p>:warning: If you do not use the install script and are extracting the archive yourself, be sure to use the fully qualified path to &lt;code>~/.puppetlabs/prm&lt;/code> on *nix or &lt;code>$HOME/.puppetlabs/prm&lt;/code> on Windows when you set your &lt;code>PATH&lt;/code> environment variable.&lt;/p>
+&lt;/blockquote>
+&lt;p>A version of the product, with telemetry functionality disabled, is available too.
+See &lt;a href="#installing-telemetry-free-version">here&lt;/a> for instructions on how to install it.&lt;/p>
+&lt;h2 id="requesting-a-feature">Requesting a feature&lt;/h2>
+&lt;p>Open a new feature request in our &lt;a href="https://github.com/puppetlabs/prm/discussions/new">Github discussion&lt;/a> page.&lt;/p>
+&lt;h2 id="reporting-problems">Reporting Problems&lt;/h2>
+&lt;p>If you&amp;rsquo;re having trouble with the experimental PRM tool, please follow these instructions
+to file an issue on our GitHub repository: &lt;a href="https://github.com/puppetlabs/prm/issues/new">https://github.com/puppetlabs/prm/issues/new&lt;/a>&lt;/p>
+&lt;p>Make sure to fill in the information that is requested in the issue template as it
+will help us investigate the problem more quickly.&lt;/p>
+&lt;h2 id="installing-telemetry-free-version">Installing Telemetry Free Version&lt;/h2>
+&lt;p>We gather telemetry data to provide insights into how our products are being used.&lt;/p>
+&lt;p>The following data is collected:&lt;/p>
+&lt;ul>
+&lt;li>Version of application in use&lt;/li>
+&lt;li>OS / platform of the device&lt;/li>
+&lt;li>What commands have been invoked (including command args)&lt;/li>
+&lt;li>Any errors that occurred when running the application&lt;/li>
+&lt;/ul>
+&lt;p>We understand that there will be some users who prefer to have no telemetry data sent.
+For those users, we offer a version of PRM with the telemetry functionality disabled.&lt;/p>
+&lt;p>To install:&lt;/p>
+&lt;h3 id="unix-systems-1">Unix Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/prm/install.sh | sh -s -- --no-telemetry
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="windows-systems-1">Windows Systems&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ps" data-lang="ps">&lt;span style="color:#50fa7b">iex&lt;/span> &lt;span style="color:#50fa7b">&amp;#34;&amp;amp;&lt;/span>{ &lt;span style="color:#50fa7b">$&lt;/span>&lt;span style="color:#f1fa8c">(irm https://pup.pt/prm/install.ps1)&lt;/span>&lt;span style="color:#50fa7b">;&lt;/span> &lt;span style="color:#50fa7b">Install-Prm&lt;/span> &lt;span style="color:#50fa7b">-NoTelemetry&lt;/span> }&lt;span style="color:#50fa7b">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PRM, without telemetry functionality, to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p></description></item></channel></rss>
