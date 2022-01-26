@@ -33,7 +33,194 @@ For those users, we offer a version of PRM with the telemetry functionality disa
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/prm/install.sh | sh -s -- --no-telemetry
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="powershell-1">PowerShell&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>&lt;span style="color:#f1fa8c">&amp;#39;https://pup.pt/prm/install.ps1&amp;#39;&lt;/span>)&lt;span style="color:#f1fa8c">; Install-Prm -NoTelemetry }&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PRM, without telemetry functionality, to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p></description></item><item><title>Prm: Quick Start Guide</title><link>https://puppetlabs.github.io/devx/prm/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/quick-start/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest release of PRM, without telemetry functionality, to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p></description></item><item><title>Prm: Installing Tools</title><link>https://puppetlabs.github.io/devx/prm/usage/tool_installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/usage/tool_installation/</guid><description>
+&lt;p>This document explains how you can install tools to execute with PRM.&lt;/p>
+&lt;p>By default, tools are installed to the &lt;code>tools&lt;/code> folder alongside PRM unless the &lt;code>toolpath&lt;/code> flag is specified with an alternate location.&lt;/p>
+&lt;h3 id="local-archive">Local archive&lt;/h3>
+&lt;p>Tool packages can be installed locally using the &lt;code>prm install&lt;/code> command.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install ~/my-tool-1.2.3.tar.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>That command will install the tool contained in &lt;code>my-tool-1.2.3.tar.gz&lt;/code> to the default location.&lt;/p>
+&lt;h3 id="remote-archive">Remote archive&lt;/h3>
+&lt;p>Tool packages stored remotely can be automatically downloaded and extracted with &lt;code>prm install&lt;/code> so long as you know the URL to where the archive is.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install https://packages.mycompany.com/prm/my-tool-1.2.3.tar.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will attempt to download the PRM tool from the specified url and then install it like any other locally available PRM tool archive.&lt;/p>
+&lt;h3 id="remote-git-repository">Remote git repository&lt;/h3>
+&lt;p>&lt;strong>Git&lt;/strong> must be installed for this feature to work. The git repository must contain only one tool and must be structured with the &lt;code>prm-config.yml&lt;/code> file and the &lt;code>content&lt;/code> directory in the root directory of the repository.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install --git-uri https://github.com/myorg/myawesometool
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will attempt to clone the PRM tool from the git repository at the specified URI and then install it to the default tool location.&lt;/p>
+&lt;h3 id="force-tool-installation">Force tool installation&lt;/h3>
+&lt;p>Adding the &lt;code>-f&lt;/code> or the &lt;code>--force&lt;/code> flag to the &lt;code>prm install&lt;/code> command will forcefully install/overwrite a tool if there is a tool installed with the same &lt;code>author&lt;/code>, &lt;code>name&lt;/code> and &lt;code>version&lt;/code>.&lt;/p>
+&lt;h3 id="updating-tools">Updating tools&lt;/h3>
+&lt;p>While there is no &lt;code>update&lt;/code> command, newer versions of tools can be installed like any other tool package.&lt;/p>
+&lt;p>Currently, only the latest version of a selected tool is executable; the ability to select an older version of the tool to execute will be added in the future.&lt;/p>
+&lt;h3 id="list-installed-tools">List installed tools&lt;/h3>
+&lt;p>Installed tools can be listed by running the command &lt;code>prm exec --list&lt;/code>, displayed in the following format:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/prm/blob/main/docs/md/content/images/exec-list-tools.png?raw=true" alt="prm tool list screenshot">&lt;/p>
+&lt;p>The &lt;code>--toolpath&lt;/code> flag can also be added to list tools installed in an alternate location.&lt;/p></description></item><item><title>Prm: Anatomy of a PRM Tool</title><link>https://puppetlabs.github.io/devx/prm/tool-anatomy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/tool-anatomy/</guid><description>
+&lt;h2 id="structure">Structure&lt;/h2>
+&lt;p>A PRM tool can be packaged as a &lt;code>.tar.gz&lt;/code> or hosted in a Github repository.
+Tools are how PRM knows to take defined actions against a file or folder; linting, testing, exporting, etc.&lt;/p>
+&lt;p>A tool can be:&lt;/p>
+&lt;ul>
+&lt;li>a Ruby gem,&lt;/li>
+&lt;li>an executable binary,&lt;/li>
+&lt;li>or a container.&lt;/li>
+&lt;/ul>
+&lt;h2 id="composition">Composition&lt;/h2>
+&lt;p>At a minimum, a PRM tool must contain a &lt;code>prm-config.yml&lt;/code> in the root directory.&lt;/p>
+&lt;p>Optionally, you may include a &lt;code>content&lt;/code> directory, also at the root.
+The &lt;code>content&lt;/code> directory can contain scripts, binaries, config files, etc. required to supplement the functionality of the tool outside the parameters of the configuration file.&lt;/p>
+&lt;p>When a tool is used with the Docker backend, everything in the &lt;code>content&lt;/code> directory is mounted to &lt;code>/tmp&lt;/code> in the container;
+e.g. &lt;code>content/myfile.sh&lt;/code> will be mounted to &lt;code>/tmp/myfile.sh&lt;/code>.&lt;/p>
+&lt;h3 id="required-parameters">Required Parameters&lt;/h3>
+&lt;p>All tools &lt;strong>must&lt;/strong> include mandatory metadata in the &lt;code>prm-config.yml&lt;/code> file which enumerate it for PRM to understand what it is.
+They must include:&lt;/p>
+&lt;ul>
+&lt;li>the author (alphanumeric characters, dashes, and underscores only),&lt;/li>
+&lt;li>a short id for the tool (alphanumeric characters, dashes, and underscores only),&lt;/li>
+&lt;li>a display name (an arbitrary string which &lt;em>can&lt;/em> include spaces),&lt;/li>
+&lt;li>a semantic version,&lt;/li>
+&lt;li>and a url to the &lt;em>upstream&lt;/em> project the tool enables users to leverage (e.g., rubocop&amp;rsquo;s landing page)&lt;/li>
+&lt;/ul>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">plugin&lt;/span>:
+&lt;span style="color:#ff79c6">author&lt;/span>: fantastic-me
+&lt;span style="color:#ff79c6">id&lt;/span>: awesome-tool
+&lt;span style="color:#ff79c6">display&lt;/span>: Awesome Tool
+&lt;span style="color:#ff79c6">version&lt;/span>: &lt;span style="color:#bd93f9">0.1.0&lt;/span>
+&lt;span style="color:#ff79c6">upstream_project_url&lt;/span>: https://github.com/fantastic-me/awesome-me
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tools are executed by namespace, always in the form &lt;code>author/id&lt;/code>.
+To execute the example tool above, you would run the command &lt;code>prm exec fantastic-me/awesome-tool&lt;/code>&lt;/p>
+&lt;h3 id="common-parameters">Common Parameters&lt;/h3>
+&lt;p>In addition to the &lt;code>plugin&lt;/code> configuration items, there is a &lt;code>common&lt;/code> section that contains parameters that change the behavior of the tool regardless of underlying implementation details.&lt;/p>
+&lt;dl>
+&lt;dt>&lt;code>can_validate&lt;/code>&lt;/dt>
+&lt;dd>Set this to &lt;code>true&lt;/code> if the tool is meant to validate a target code directory.&lt;/dd>
+&lt;dd>Defaults to &lt;code>false&lt;/code>&lt;/dd>
+&lt;/dl>
+&lt;!-- Force a break between definitions -->
+&lt;dl>
+&lt;dt>&lt;code>help_arg&lt;/code>&lt;/dt>
+&lt;dd>Set this to the argument the tool expects to be passed to display its help info.&lt;/dd>
+&lt;dd>Defaults to &lt;code>--help&lt;/code>.&lt;/dd>
+&lt;/dl>
+&lt;!-- Uncomment when these when implemented
+`interleave_stdout_err`
+: Should the stdout &amp; stderr be interleaved in to one stream, as opposed to separate ones?
+: Defaults to `false`.
+`needs_write_access`
+: Will the execution of this tool require RW permissions against the target code dir?
+: Defaults to `false`.
+-->
+&lt;dl>
+&lt;dt>&lt;code>sucess_exit_code&lt;/code>&lt;/dt>
+&lt;dd>Set this to the integer that the tool will exit with if it runs successfully.&lt;/dd>
+&lt;dd>Defaults to &lt;code>0&lt;/code>.&lt;/dd>
+&lt;/dl>
+&lt;!-- Force a break between definitions -->
+&lt;dl>
+&lt;dt>&lt;code>default_args&lt;/code>&lt;/dt>
+&lt;dd>Set this to an array of arguments to pass to the tool by default; these can be overridden with the &lt;code>toolArgs&lt;/code> flag when executed.&lt;/dd>
+&lt;dd>No default value.&lt;/dd>
+&lt;/dl>
+&lt;!-- Force a break between definitions -->
+&lt;dl>
+&lt;dt>&lt;code>env&lt;/code>&lt;/dt>
+&lt;dd>Set this to a map of environment variable names and their values to be set automatically prior to tool execution.&lt;/dd>
+&lt;dd>No default value.&lt;/dd>
+&lt;/dl>
+&lt;!-- Uncomment when this is implemented
+`output_mode`
+: The output mode (`junit|json|yaml`)
+: No default value.
+-->
+&lt;dl>
+&lt;dt>&lt;code>requires_git&lt;/code>&lt;/dt>
+&lt;dd>Set this to &lt;code>true&lt;/code> if the tool requires a &lt;code>git&lt;/code> binary.&lt;/dd>
+&lt;dd>No default value.&lt;/dd>
+&lt;/dl>
+&lt;!-- Force a break between definitions -->
+&lt;dl>
+&lt;dt>&lt;code>use_script&lt;/code>&lt;/dt>
+&lt;dd>Set this to the name of a script that will be invoked to execute the tool.&lt;/dd>
+&lt;dd>The name &lt;strong>should not&lt;/strong> include the file extension (e.g. &lt;code>runme.sh&lt;/code> -&amp;gt; &lt;code>use_script: runme&lt;/code>).&lt;/dd>
+&lt;dd>The script &lt;strong>should&lt;/strong> be present in the &lt;code>content&lt;/code> directory and have execute permissions set.&lt;/dd>
+&lt;dd>The script &lt;strong>should&lt;/strong> have execute permissions set prior to packaging the tool (ie &lt;code>chmod +x runme.sh&lt;/code>).&lt;/dd>
+&lt;dd>No default value.&lt;/dd>
+&lt;/dl>
+&lt;h4 id="example-common-parameters">Example Common Parameters&lt;/h4>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">common&lt;/span>:
+&lt;span style="color:#ff79c6">can_validate&lt;/span>: &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;span style="color:#ff79c6">help_arg&lt;/span>: &lt;span style="color:#f1fa8c">&amp;#39;-h&amp;#39;&lt;/span>
+&lt;span style="color:#ff79c6">success_exit_code&lt;/span>: &lt;span style="color:#bd93f9">2&lt;/span>
+&lt;span style="color:#ff79c6">default_args&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#39;--include-tempfiles&amp;#39;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#39;--fail-fast&amp;#39;&lt;/span>]
+&lt;span style="color:#ff79c6">env&lt;/span>:
+- &lt;span style="color:#ff79c6">&amp;#34;TARGET_VERSION&amp;#34;: &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;1.2.3&amp;#34;&lt;/span>
+- &lt;span style="color:#ff79c6">&amp;#34;CONFIG_FILE&amp;#34;: &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;/code/config.yaml&amp;#34;&lt;/span>
+&lt;span style="color:#ff79c6">requires_git&lt;/span>: &lt;span style="color:#ff79c6">true&lt;/span>
+&lt;span style="color:#ff79c6">use_script&lt;/span>: &lt;span style="color:#f1fa8c">&amp;#34;collate_files_and_run&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This tool, as configured:&lt;/p>
+&lt;ol>
+&lt;li>Can be used with &lt;code>prm validate&lt;/code>&lt;/li>
+&lt;li>Will pass &lt;code>-h&lt;/code> to retrieve the help information for the underlying tool&lt;/li>
+&lt;li>Will treat &lt;em>only&lt;/em> executions with an exit code of &lt;code>2&lt;/code> as successful&lt;/li>
+&lt;li>Will by default append &lt;code>--include-tempfiles --fail-fast&lt;/code> when executed&lt;/li>
+&lt;li>Will set the &lt;code>TARGET_VERSION&lt;/code> environment variable to &lt;code>1.2.3&lt;/code> and the &lt;code>CONFIG_FILE&lt;/code> environment variable to &lt;code>/code/config.yaml&lt;/code> in the execution context&lt;/li>
+&lt;li>Does require &lt;code>git&lt;/code> to be installed/available&lt;/li>
+&lt;li>Will use the &lt;code>collate_files_and_run.sh&lt;/code> in the &lt;code>content&lt;/code> directory to execute the tool.&lt;/li>
+&lt;/ol>
+&lt;h3 id="gem-tools">Gem Tools&lt;/h3>
+&lt;p>All &lt;code>gem&lt;/code> based tools must declare which gems must be installed and the name of the executable to run.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">gem&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: [amazing_gem, dependency_gem, another_dependency_gem]
+&lt;span style="color:#ff79c6">executable&lt;/span>: amazing_gem
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default, any gems specified will always attempt to resolve and use the &lt;em>latest&lt;/em> released version.&lt;/p>
+&lt;p>If there are compatibility concerns, version pins by Ruby version can be enumerated under the &lt;code>compatibility&lt;/code> section.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">gem&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: [amazing_gem, dependency_gem, another_dependency_gem]
+&lt;span style="color:#ff79c6">executable&lt;/span>: amazing_gem
+&lt;span style="color:#ff79c6">compatibility&lt;/span>:
+- &lt;span style="color:#ff79c6">2.6&lt;/span>:
+- &lt;span style="color:#ff79c6">&amp;#34;amazing_gem&amp;#34;: &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;2.15.0&amp;#34;&lt;/span>
+- &lt;span style="color:#ff79c6">2.7&lt;/span>:
+- &lt;span style="color:#ff79c6">&amp;#34;amazing_gem&amp;#34;: &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;~&amp;gt; 3.0&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the latest versions of &lt;code>dependency_gem&lt;/code> and &lt;code>another_dependency_gem&lt;/code> regardless of Ruby version.&lt;/p>
+&lt;p>For any version of Ruby other than &lt;code>2.6&lt;/code> and &lt;code>2.7&lt;/code>, the tool will expect to use the latest version of &lt;code>amazing_gem&lt;/code> as well.
+For Ruby 2.6, &lt;code>amazing_gem&lt;/code> will only ever be used at version &lt;code>2.15.0&lt;/code>.
+For Ruby 2.7, &lt;code>amazing_gem&lt;/code> will always use the latest version greater than or equal to &lt;code>3.0&lt;/code> and less than &lt;code>4.0&lt;/code>.&lt;/p>
+&lt;h3 id="binary-tools">Binary Tools&lt;/h3>
+&lt;p>All &lt;code>binary&lt;/code> based tools must declare the name of the binary which is to be run and installation steps for acquiring that binary on particular platforms.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">binary&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: my_tool
+&lt;span style="color:#ff79c6">install_steps&lt;/span>:
+&lt;span style="color:#ff79c6">windows&lt;/span>: |&lt;span style="color:#f1fa8c">
+&lt;/span>&lt;span style="color:#f1fa8c"> # Windows specific install steps
+&lt;/span>&lt;span style="color:#f1fa8c"> choco install my_tool&lt;/span>
+&lt;span style="color:#ff79c6">linux&lt;/span>: |&lt;span style="color:#f1fa8c">
+&lt;/span>&lt;span style="color:#f1fa8c"> # Linux specific install steps
+&lt;/span>&lt;span style="color:#f1fa8c"> rpm install my_tool&lt;/span>
+&lt;span style="color:#ff79c6">darwin&lt;/span>: |&lt;span style="color:#f1fa8c">
+&lt;/span>&lt;span style="color:#f1fa8c"> # MacOS specific install steps
+&lt;/span>&lt;span style="color:#f1fa8c"> brew install my_tool&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This configuration will expect to find &lt;code>my_tool&lt;/code> on the &lt;code>PATH&lt;/code> and calls out installation steps for Windows, Linux, and MacOS.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> At this time, only Linux docker containers are supported.
+Future releases will support other platforms and backends.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="container-tools">Container Tools&lt;/h3>
+&lt;p>All &lt;code>container&lt;/code> based tools must declare the image name and tag to be used.
+The images must be available or retrievable by Docker on the machine running PRM.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">container&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: myorg/myimage
+&lt;span style="color:#ff79c6">tag&lt;/span>: latest
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This configuration will execute in the &lt;code>myorg/myimage:latest&lt;/code> container.&lt;/p></description></item><item><title>Prm: Quick Start Guide</title><link>https://puppetlabs.github.io/devx/prm/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/quick-start/</guid><description>
 &lt;p>This quick start guide will show you how to:&lt;/p>
 &lt;ul>
 &lt;li>Select a Puppet version to run against&lt;/li>

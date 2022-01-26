@@ -1,0 +1,27 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – update-tool</title><link>https://puppetlabs.github.io/devx/tags/update-tool/</link><description>Recent content in update-tool on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/tags/update-tool/index.xml" rel="self" type="application/rss+xml"/><item><title>Prm: Installing Tools</title><link>https://puppetlabs.github.io/devx/prm/usage/tool_installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/usage/tool_installation/</guid><description>
+&lt;p>This document explains how you can install tools to execute with PRM.&lt;/p>
+&lt;p>By default, tools are installed to the &lt;code>tools&lt;/code> folder alongside PRM unless the &lt;code>toolpath&lt;/code> flag is specified with an alternate location.&lt;/p>
+&lt;h3 id="local-archive">Local archive&lt;/h3>
+&lt;p>Tool packages can be installed locally using the &lt;code>prm install&lt;/code> command.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install ~/my-tool-1.2.3.tar.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>That command will install the tool contained in &lt;code>my-tool-1.2.3.tar.gz&lt;/code> to the default location.&lt;/p>
+&lt;h3 id="remote-archive">Remote archive&lt;/h3>
+&lt;p>Tool packages stored remotely can be automatically downloaded and extracted with &lt;code>prm install&lt;/code> so long as you know the URL to where the archive is.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install https://packages.mycompany.com/prm/my-tool-1.2.3.tar.gz
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will attempt to download the PRM tool from the specified url and then install it like any other locally available PRM tool archive.&lt;/p>
+&lt;h3 id="remote-git-repository">Remote git repository&lt;/h3>
+&lt;p>&lt;strong>Git&lt;/strong> must be installed for this feature to work. The git repository must contain only one tool and must be structured with the &lt;code>prm-config.yml&lt;/code> file and the &lt;code>content&lt;/code> directory in the root directory of the repository.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install --git-uri https://github.com/myorg/myawesometool
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will attempt to clone the PRM tool from the git repository at the specified URI and then install it to the default tool location.&lt;/p>
+&lt;h3 id="force-tool-installation">Force tool installation&lt;/h3>
+&lt;p>Adding the &lt;code>-f&lt;/code> or the &lt;code>--force&lt;/code> flag to the &lt;code>prm install&lt;/code> command will forcefully install/overwrite a tool if there is a tool installed with the same &lt;code>author&lt;/code>, &lt;code>name&lt;/code> and &lt;code>version&lt;/code>.&lt;/p>
+&lt;h3 id="updating-tools">Updating tools&lt;/h3>
+&lt;p>While there is no &lt;code>update&lt;/code> command, newer versions of tools can be installed like any other tool package.&lt;/p>
+&lt;p>Currently, only the latest version of a selected tool is executable; the ability to select an older version of the tool to execute will be added in the future.&lt;/p>
+&lt;h3 id="list-installed-tools">List installed tools&lt;/h3>
+&lt;p>Installed tools can be listed by running the command &lt;code>prm exec --list&lt;/code>, displayed in the following format:&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/prm/blob/main/docs/md/content/images/exec-list-tools.png?raw=true" alt="prm tool list screenshot">&lt;/p>
+&lt;p>The &lt;code>--toolpath&lt;/code> flag can also be added to list tools installed in an alternate location.&lt;/p></description></item></channel></rss>
