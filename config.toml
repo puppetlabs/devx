@@ -11,7 +11,7 @@ theme = ["docsy"]
 enableGitInfo = true
 
 # Language settings
-contentDir = "content/en"
+contentDir = "content"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 # Useful when translating.
