@@ -17,4 +17,87 @@ Run &lt;code>pct new --info &amp;lt;TEMPLATE_AUTHOR&amp;gt;/&amp;lt;TEMPLATE_ID&
 &lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_info.gif?raw=true" alt="new_info">&lt;/p>
 &lt;p>We&amp;rsquo;re happy with those defaults, so let&amp;rsquo;s deploy this item.&lt;/p>
 &lt;p>Since we&amp;rsquo;re outside the module root dir, we&amp;rsquo;ll use the &lt;code>-o&lt;/code> option to point at the root dir:&lt;/p>
-&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_ghactions.gif?raw=true" alt="new_info">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://github.com/puppetlabs/pdkgo/blob/main/docs/_resources/new_ghactions.gif?raw=true" alt="new_info">&lt;/p></description></item><item><title>Prm: Quick Start Guide</title><link>https://puppetlabs.github.io/devx/prm/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/quick-start/</guid><description>
+&lt;p>This quick start guide will show you how to:&lt;/p>
+&lt;ul>
+&lt;li>Select a Puppet version to run against&lt;/li>
+&lt;li>Check for available tools&lt;/li>
+&lt;li>Generate reference docs for a Puppet module&lt;/li>
+&lt;/ul>
+&lt;p>It assumes you have already installed PRM.&lt;/p>
+&lt;h2 id="select-a-puppet-version">Select a Puppet Version&lt;/h2>
+&lt;p>By default, PRM is set to use Puppet 7.0.0 as the runtime environment.
+We can verify that:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm get puppet
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">4:35PM INF Puppet version is configured to: 7.0.0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To change the Puppet runtime version, we use the &lt;code>prm set&lt;/code> command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm &lt;span style="color:#8be9fd;font-style:italic">set&lt;/span> puppet 6.19.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then confirm that the correct version has been set:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm get puppet
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">4:36PM INF Puppet version is configured to: 6.19.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>From this point on, PRM will be executing in the &lt;code>6.19.1&lt;/code> Puppet runtime.
+For the list of available versions, see the &lt;a href="https://hub.docker.com/r/puppet/puppet-agent/tags">Puppet Agent docker tag list&lt;/a>.
+In this initial release, the runtime is tied to the published Puppet Agent Docker images.&lt;/p>
+&lt;h2 id="check-available-tools">Check Available Tools&lt;/h2>
+&lt;p>To see what tools are available by default, we can run a single command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> --list
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which by default returns a table view of available tools - including their name, author, project url, and version.&lt;/p>
+&lt;!-- Once committed, this needs to be updated to the github link -->
+&lt;p>&lt;img src="images/exec-list-tools.png" alt="prm tool list screenshot">&lt;/p>
+&lt;h2 id="generate-reference-docs">Generate Reference Docs&lt;/h2>
+&lt;p>Reviewing the listed tools, we can see that there is a &lt;code>puppet-strings&lt;/code> tool.
+By default, this tool runs the Puppet Strings command to verify the documentation status of the module.
+We can point this at a folder containing a Puppet module to see the state of that module&amp;rsquo;s documentation.
+In this example, we&amp;rsquo;re generating the reference documentation for the &lt;a href="https://forge.puppet.com/puppetlabs/acl">ACL module&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> puppetlabs/puppet-strings --codedir ~/code/modules/puppetlabs-acl
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">4:54PM INF Creating new image. Please wait...
+4:54PM INF Code path: ~/code/modules/puppetlabs-acl
+4:54PM INF Cache path: ~/.pdk/prm/cache
+4:54PM INF Additional Args: []
+Files: 5
+Modules: 2 ( 0 undocumented)
+Classes: 4 ( 0 undocumented)
+Constants: 25 ( 0 undocumented)
+Attributes: 9 ( 0 undocumented)
+Methods: 49 ( 0 undocumented)
+Puppet Data Types: 0 ( 0 undocumented)
+Puppet Data Type Aliases: 0 ( 0 undocumented)
+Puppet Classes: 0 ( 0 undocumented)
+Puppet Types: 1 ( 0 undocumented)
+Puppet Providers: 1 ( 0 undocumented)
+Puppet Functions: 0 ( 0 undocumented)
+Puppet Defined Types: 0 ( 0 undocumented)
+Puppet Plans: 0 ( 0 undocumented)
+Puppet Tasks: 0 ( 0 undocumented)
+100.00% documented
+4:54PM INF Tool puppetlabs/puppet-strings executed successfully
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Behind the scenes, PRM built a docker container on the fly from the tool definition for &lt;code>puppet-strings&lt;/code> and then executed it against the specified directory.
+The output we see without the PRM log prefix is what the docker container&amp;rsquo;s stdout returned;
+in this case, the documentation results for the ACL module.&lt;/p>
+&lt;p>We can also pass arbitrary arguments to the tool;
+to generate the reference documentation, we need to specify that we want to generate the document and set the format to markdown.
+This will create (or update if it exists) the &lt;code>REFERENCE.md&lt;/code> file in the module&amp;rsquo;s folder.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> puppetlabs/puppet-strings --codedir ~/code/modules/puppetlabs-acl --toolArgs &lt;span style="color:#f1fa8c">&amp;#34;strings generate --format markdown&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">4:54PM INF Creating new image. Please wait...
+4:54PM INF Code path: ~/code/modules/puppetlabs-acl
+4:54PM INF Cache path: ~/.pdk/prm/cache
+4:54PM INF Additional Args: [strings generate --format markdown]
+Files: 5
+Modules: 2 ( 0 undocumented)
+Classes: 4 ( 0 undocumented)
+Constants: 25 ( 0 undocumented)
+Attributes: 9 ( 0 undocumented)
+Methods: 49 ( 0 undocumented)
+Puppet Data Types: 0 ( 0 undocumented)
+Puppet Data Type Aliases: 0 ( 0 undocumented)
+Puppet Classes: 0 ( 0 undocumented)
+Puppet Types: 1 ( 0 undocumented)
+Puppet Providers: 1 ( 0 undocumented)
+Puppet Functions: 0 ( 0 undocumented)
+Puppet Defined Types: 0 ( 0 undocumented)
+Puppet Plans: 0 ( 0 undocumented)
+Puppet Tasks: 0 ( 0 undocumented)
+100.00% documented
+4:54PM INF Tool puppetlabs/puppet-strings executed successfully
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>While the output of Puppet Strings itself isn&amp;rsquo;t any different, we can check the timestamp on the &lt;code>REFERENCE.md&lt;/code> file and verify that it was just updated (or created if it didn&amp;rsquo;t already exist).&lt;/p>
+&lt;p>Now you know how to set the Puppet runtime for PRM, find a tool to execute, and execute that tool with additional arguments.&lt;/p></description></item></channel></rss>
