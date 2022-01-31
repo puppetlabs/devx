@@ -1,4 +1,205 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – Blog</title><link>https://puppetlabs.github.io/devx/blog/</link><description>Recent content in Blog on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: The future of the Puppet Developer Kit (PDK)</title><link>https://puppetlabs.github.io/devx/blog/2021/09/14/the-future-of-the-puppet-developer-kit-pdk/</link><pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/blog/2021/09/14/the-future-of-the-puppet-developer-kit-pdk/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – Blog</title><link>https://puppetlabs.github.io/devx/blog/</link><description>Recent content in Blog on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Puppet Runtime Manager 0.1.0 Release 🚀</title><link>https://puppetlabs.github.io/devx/blog/2022/01/31/puppet-runtime-manager-0.1.0-release/</link><pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/blog/2022/01/31/puppet-runtime-manager-0.1.0-release/</guid><description>
+&lt;p>We are proud to announce the first release for the new tool for executing arbitrary commands against your code in a Puppet runtime: The &lt;strong>Puppet Runtime Manager (PRM)&lt;/strong>.&lt;/p>
+&lt;p>The &lt;strong>Puppet Runtime Manager&lt;/strong> abstracts away the Puppet Ruby development environment to enable you to execute against and validate content for any Puppet Product that you might author!&lt;/p>
+&lt;h2 id="installing-prm-">Installing PRM 💾&lt;/h2>
+&lt;p>To get started, you can either download the release from the &lt;a href="https://github.com/puppetlabs/prm/releases/tag/0.1.0">PRM repo&lt;/a> or use our installer scripts:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">
+&lt;a class="nav-link active tab-Unix-Systems"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab" onclick="handleClick(&amp;#34;Unix-Systems&amp;#34;);"
+aria-controls="tabs-0-0" aria-selected="true">
+Unix Systems
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Windows-Systems"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab" onclick="handleClick(&amp;#34;Windows-Systems&amp;#34;);"
+aria-controls="tabs-0-1" aria-selected="false">
+Windows Systems
+&lt;/a>
+&lt;/li>&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">&lt;div class="tab-pane fade show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">curl -L https://pup.pt/prm/install.sh | sh&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>https://pup.pt/prm/install.ps1)&lt;span style="color:#f1fa8c">; Install-Prm }&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>This will install the latest release of PRM to &lt;code>~/.puppetlabs/prm&lt;/code>.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">PRM is Experimental!&lt;/h4>
+PRM is currently in an EXPERIMENTAL phase and feedback is encouraged via &lt;a href="https://github.com/puppetlabs/pdkgo/discussions">our Discussions page on GitHub&lt;/a>.
+&lt;/div>
+&lt;h3 id="telemetry--prm">Telemetry &amp;amp; PRM&lt;/h3>
+&lt;p>By default, PRM collects some telemetry during each run.
+This information is non-identifying and does not include any personal or organizational details.&lt;/p>
+&lt;p>For more information, see &lt;a href="https://puppetlabs.github.io/devx/prm/concepts/telemetry/">our documentation on Telemetry&lt;/a>.&lt;/p>
+&lt;p>If you&amp;rsquo;d like to install PRM &lt;em>without&lt;/em> telemetry, you can use these scripts:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
+&lt;a class="nav-link active tab-Notel-on-Unix-Systems"
+id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Notel-on-Unix-Systems&amp;#34;);"
+aria-controls="tabs-3-0" aria-selected="true">
+Notel on Unix Systems
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Notel-on-Windows-Systems"
+id="tabs-3-1-tab" data-toggle="tab" href="#tabs-3-1" role="tab" onclick="handleClick(&amp;#34;Notel-on-Windows-Systems&amp;#34;);"
+aria-controls="tabs-3-1" aria-selected="false">
+Notel on Windows Systems
+&lt;/a>
+&lt;/li>&lt;/ul>
+&lt;div class="tab-content" id="tabs-3-content">&lt;div class="tab-pane fade show active"
+id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">curl -L https://pup.pt/prm/install.sh | sh -s -- --no-telemetry&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>https://pup.pt/prm/install.ps1)&lt;span style="color:#f1fa8c">; Install-Prm -NoTelemetry}&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;h3 id="prerequisites--support">Prerequisites &amp;amp; Support&lt;/h3>
+&lt;p>In this initial release, PRM only supports one backend for running tools: Docker.
+You will need to be able to use Docker locally to pull, build, and run container images for this release (though PRM handles all those steps for you).&lt;/p>
+&lt;p>Right now, only Linux containers in Docker are supported, but the Docker backend is functional on Windows, Linux, and MacOS systems.&lt;/p>
+&lt;p>A future release will add a local execution backend, enabling you to just use your locally installed Puppet Agent for the runtime.&lt;/p>
+&lt;p>If there are other backends you&amp;rsquo;d like to see supported, please &lt;a href="https://github.com/puppetlabs/pdkgo/discussions">raise a discussion with us!&lt;/a>&lt;/p>
+&lt;h2 id="docs-in-the-terminal-">Docs in the Terminal 📃&lt;/h2>
+&lt;p>PRM has a pair of robust help systems built in for reviewing reference, concept, and narrative documentation.&lt;/p>
+&lt;p>To see the help for any command or subcommand:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">&lt;li class="nav-item">
+&lt;a class="nav-link active tab-Use-the-help-subcommand"
+id="tabs-4-0-tab" data-toggle="tab" href="#tabs-4-0" role="tab" onclick="handleClick(&amp;#34;Use-the-help-subcommand&amp;#34;);"
+aria-controls="tabs-4-0" aria-selected="true">
+Use the help subcommand
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Use-the-help-flag"
+id="tabs-4-1-tab" data-toggle="tab" href="#tabs-4-1" role="tab" onclick="handleClick(&amp;#34;Use-the-help-flag&amp;#34;);"
+aria-controls="tabs-4-1" aria-selected="false">
+Use the help flag
+&lt;/a>
+&lt;/li>&lt;/ul>
+&lt;div class="tab-content" id="tabs-4-content">&lt;div class="tab-pane fade show active"
+id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">prm &lt;span style="color:#8be9fd;font-style:italic">help&lt;/span> &lt;span style="color:#6272a4"># Displays the help for PRM itself&lt;/span>
+prm &lt;span style="color:#8be9fd;font-style:italic">help&lt;/span> &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> &lt;span style="color:#6272a4"># Displays the help for the prm exec command&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">prm --help &lt;span style="color:#6272a4"># Displays the help for PRM itself&lt;/span>
+prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> --help &lt;span style="color:#6272a4"># Displays the help for the prm exec command&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>To read the concept and narrative documentation locally instead of &lt;a href="https://puppetlabs.github.io/devx/prm/">online&lt;/a>:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">&lt;li class="nav-item">
+&lt;a class="nav-link active tab-List-Available-Topics"
+id="tabs-6-0-tab" data-toggle="tab" href="#tabs-6-0" role="tab" onclick="handleClick(&amp;#34;List-Available-Topics&amp;#34;);"
+aria-controls="tabs-6-0" aria-selected="true">
+List Available Topics
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Filter-Available-Topics"
+id="tabs-6-1-tab" data-toggle="tab" href="#tabs-6-1" role="tab" onclick="handleClick(&amp;#34;Filter-Available-Topics&amp;#34;);"
+aria-controls="tabs-6-1" aria-selected="false">
+Filter Available Topics
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link tab-Display-a-Topic"
+id="tabs-6-2-tab" data-toggle="tab" href="#tabs-6-2" role="tab" onclick="handleClick(&amp;#34;Display-a-Topic&amp;#34;);"
+aria-controls="tabs-6-2" aria-selected="false">
+Display a Topic
+&lt;/a>
+&lt;/li>&lt;/ul>
+&lt;div class="tab-content" id="tabs-6-content">&lt;div class="tab-pane fade show active"
+id="tabs-6-0" role="tabpanel" aria-labelled-by="tabs-6-0-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">prm explain --list
+prm explain &lt;span style="color:#6272a4"># Identical to prm explain --list&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-6-1" role="tabpanel" aria-labelled-by="tabs-6-1-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">prm explain --category concept &lt;span style="color:#6272a4"># Only list concept docs&lt;/span>
+prm explain --tag tools &lt;span style="color:#6272a4"># Only list docs about tools&lt;/span>
+prm explain --category concept --tag tools &lt;span style="color:#6272a4"># Multi-filter&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">prm --help &lt;span style="color:#6272a4"># Displays the help for PRM itself&lt;/span>
+prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> --help &lt;span style="color:#6272a4"># Displays the help for the prm exec command&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>For more detailed information on the &lt;code>explain&lt;/code> subsystem and documentation, see &lt;a href="https://puppetlabs.github.io/devx/prm/usage/explain-subsystem/">our narrative document on it&lt;/a>.&lt;/p>
+&lt;h2 id="run-tools-against-your-content-">Run Tools Against Your Content 🏃🏻‍♀️&lt;/h2>
+&lt;p>&lt;strong>PRM&lt;/strong> can run tools against any type of a Puppet Product project.
+You can run r10k against Puppet &lt;a href="https://github.com/puppetlabs/control-repo">control repos&lt;/a>, validate EPP files in Puppet &lt;a href="https://puppet.com/docs/puppet/7/modules_fundamentals.html">modules&lt;/a>, rubocop Bolt &lt;a href="https://puppet.com/docs/bolt/latest/projects.html">projects&lt;/a>, and more!&lt;/p>
+&lt;p>We&amp;rsquo;ve shipped with a subset of tools you can use:&lt;/p>
+&lt;ul>
+&lt;li>EPP&lt;/li>
+&lt;li>Heira EYAML&lt;/li>
+&lt;li>metadata-json-lint&lt;/li>
+&lt;li>onceover&lt;/li>
+&lt;li>puppet-lint&lt;/li>
+&lt;li>puppet-strings&lt;/li>
+&lt;li>puppet-syntax&lt;/li>
+&lt;li>r10k&lt;/li>
+&lt;li>ra10ke&lt;/li>
+&lt;li>rubocop&lt;/li>
+&lt;li>rspec-puppet&lt;/li>
+&lt;/ul>
+&lt;p>These tools are currently maintained by the DevX team in the &lt;a href="https://github.com/puppetlabs/fantastic-adventure">fantastic-adventure repository&lt;/a>.
+If you&amp;rsquo;d like to learn more about how they&amp;rsquo;re constructed or how to develop your own, check out our &lt;a href="https://puppetlabs.github.io/devx/prm/concepts/tool-anatomy/">&lt;em>Anatomy of a Tool&lt;/em> guide&lt;/a>.&lt;/p>
+&lt;p>Since PRM tools are external to the PRM code base, Puppet Product teams, Partners and the wider OSS Community can publish their own tool packages without input or effort from the DevX team.
+This enables a single tool to support many products.&lt;/p>
+&lt;h3 id="example-generate-reference-docs-for-puppetlabs-acl">Example: Generate Reference Docs for puppetlabs-acl&lt;/h3>
+&lt;div class="alert alert-info" role="alert">
+This example is a shortened version of our &lt;a href="https://puppetlabs.github.io/devx/prm/quick-start/">Quick Start Guide&lt;/a>, which includes a more detailed walkthrough and includes configuring PRM beyond the defaults.
+&lt;/div>
+&lt;p>Before we generate the reference documents for a Puppet module, we might want to ensure that we have full coverage for our module.&lt;/p>
+&lt;p>Assuming we&amp;rsquo;ve already cloned a copy of [https://github.com/puppetlabs/puppetlabs-acl] locally to &lt;code>~/code/modules/puppetlabs-acl&lt;/code>, we can run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">prm exec puppetlabs/puppet-strings --codedir ~/code/modules/puppetlabs-acl
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">4:54PM INF Creating new image. Please wait...
+4:54PM INF Code path: ~/code/modules/puppetlabs-acl
+4:54PM INF Cache path: ~/.pdk/prm/cache
+4:54PM INF Additional Args: []
+Files: 5
+Modules: 2 ( 0 undocumented)
+Classes: 4 ( 0 undocumented)
+Constants: 25 ( 0 undocumented)
+Attributes: 9 ( 0 undocumented)
+Methods: 49 ( 0 undocumented)
+Puppet Data Types: 0 ( 0 undocumented)
+Puppet Data Type Aliases: 0 ( 0 undocumented)
+Puppet Classes: 0 ( 0 undocumented)
+Puppet Types: 1 ( 0 undocumented)
+Puppet Providers: 1 ( 0 undocumented)
+Puppet Functions: 0 ( 0 undocumented)
+Puppet Defined Types: 0 ( 0 undocumented)
+Puppet Plans: 0 ( 0 undocumented)
+Puppet Tasks: 0 ( 0 undocumented)
+100.00% documented
+4:54PM INF Tool puppetlabs/puppet-strings executed successfully
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Behind the scenes, PRM built a docker container on the fly from the tool definition for &lt;code>puppet-strings&lt;/code> and then executed it against the specified directory.
+The output we see without the PRM log prefix is what the docker container&amp;rsquo;s stdout returned;
+in this case, the documentation results for the ACL module.&lt;/p>
+&lt;p>We can also pass arbitrary arguments to the tool;
+to generate the reference documentation, we need to specify that we want to generate the document and set the format to markdown.
+This will create (or update if it exists) the &lt;code>REFERENCE.md&lt;/code> file in the module&amp;rsquo;s folder.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> puppetlabs/puppet-strings --codedir ~/code/modules/puppetlabs-acl --toolArgs &lt;span style="color:#f1fa8c">&amp;#34;strings generate --format markdown&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">4:54PM INF Creating new image. Please wait...
+4:54PM INF Code path: ~/code/modules/puppetlabs-acl
+4:54PM INF Cache path: ~/.pdk/prm/cache
+4:54PM INF Additional Args: [strings generate --format markdown]
+Files: 5
+Modules: 2 ( 0 undocumented)
+Classes: 4 ( 0 undocumented)
+Constants: 25 ( 0 undocumented)
+Attributes: 9 ( 0 undocumented)
+Methods: 49 ( 0 undocumented)
+Puppet Data Types: 0 ( 0 undocumented)
+Puppet Data Type Aliases: 0 ( 0 undocumented)
+Puppet Classes: 0 ( 0 undocumented)
+Puppet Types: 1 ( 0 undocumented)
+Puppet Providers: 1 ( 0 undocumented)
+Puppet Functions: 0 ( 0 undocumented)
+Puppet Defined Types: 0 ( 0 undocumented)
+Puppet Plans: 0 ( 0 undocumented)
+Puppet Tasks: 0 ( 0 undocumented)
+100.00% documented
+4:54PM INF Tool puppetlabs/puppet-strings executed successfully
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>While the output of Puppet Strings itself isn&amp;rsquo;t any different, we can check the timestamp on the &lt;code>REFERENCE.md&lt;/code> file and verify that it was just updated (or created if it didn&amp;rsquo;t already exist).&lt;/p>
+&lt;p>So!
+That&amp;rsquo;s how you run a PRM tool against a folder and can send the tool specific arguments, too!&lt;/p>
+&lt;h2 id="coming-soon">Coming Soon❗&lt;/h2>
+&lt;p>As mentioned earlier, this is the &lt;em>initial&lt;/em> release for PRM;
+we&amp;rsquo;re not done!&lt;/p>
+&lt;p>Our next planned release, &lt;code>0.2.0&lt;/code>, will add the &lt;code>validate&lt;/code> functionality you may remember from the PDK.
+In short, this will enable you to run multiple tools against your code in parallel and report back to you both pass/fail and detailed failure notes (if any).
+We are targeting this release for late March/early April.&lt;/p>
+&lt;p>After that, our &lt;code>0.3.0&lt;/code> release will add local execution as a backend, removing the dependency on Docker so long as you have the Puppet Agent installed locally.&lt;/p>
+&lt;p>In the meantime, we will be improving and adding tools; if you add any yourself, we&amp;rsquo;d love to hear about it and highlight them in future blog posts!&lt;/p>
+&lt;p>Til next time!&lt;/p>
+&lt;p>~ The DevX Team&lt;/p></description></item><item><title>Blog: The future of the Puppet Developer Kit (PDK)</title><link>https://puppetlabs.github.io/devx/blog/2021/09/14/the-future-of-the-puppet-developer-kit-pdk/</link><pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/blog/2021/09/14/the-future-of-the-puppet-developer-kit-pdk/</guid><description>
 &lt;p>The Puppet Developer Kit was launched in 2017 to help our users develop high quality modules faster and over the years, it has seen regular development towards that goal.&lt;/p>
 &lt;p>It was designed to be a single install that would provide everything you needed to write, lint, test and publish a Puppet module — and for the most part, that&amp;rsquo;s what it did.&lt;/p>
 &lt;h2 id="what-worked">What worked&lt;/h2>
