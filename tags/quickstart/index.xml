@@ -42,8 +42,7 @@ In this initial release, the runtime is tied to the published Puppet Agent Docke
 &lt;p>To see what tools are available by default, we can run a single command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">prm &lt;span style="color:#8be9fd;font-style:italic">exec&lt;/span> --list
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Which by default returns a table view of available tools - including their name, author, project url, and version.&lt;/p>
-&lt;!-- Once committed, this needs to be updated to the github link -->
-&lt;p>&lt;img src="images/exec-list-tools.png" alt="prm tool list screenshot">&lt;/p>
+&lt;p>&lt;img src="https://github.com/puppetlabs/prm/blob/main/docs/md/content/images/exec-list-tools.png?raw=true" alt="prm tool list screenshot">&lt;/p>
 &lt;h2 id="generate-reference-docs">Generate Reference Docs&lt;/h2>
 &lt;p>Reviewing the listed tools, we can see that there is a &lt;code>puppet-strings&lt;/code> tool.
 By default, this tool runs the Puppet Strings command to verify the documentation status of the module.

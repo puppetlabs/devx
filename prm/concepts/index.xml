@@ -1,30 +1,34 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – tools</title><link>https://puppetlabs.github.io/devx/tags/tools/</link><description>Recent content in tools on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Prm: Installing Tools</title><link>https://puppetlabs.github.io/devx/prm/usage/tool_installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/usage/tool_installation/</guid><description>
-&lt;p>This document explains how you can install tools to execute with PRM.&lt;/p>
-&lt;p>By default, tools are installed to the &lt;code>tools&lt;/code> folder alongside PRM unless the &lt;code>toolpath&lt;/code> flag is specified with an alternate location.&lt;/p>
-&lt;h3 id="local-archive">Local archive&lt;/h3>
-&lt;p>Tool packages can be installed locally using the &lt;code>prm install&lt;/code> command.&lt;/p>
-&lt;p>For example:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install ~/my-tool-1.2.3.tar.gz
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>That command will install the tool contained in &lt;code>my-tool-1.2.3.tar.gz&lt;/code> to the default location.&lt;/p>
-&lt;h3 id="remote-archive">Remote archive&lt;/h3>
-&lt;p>Tool packages stored remotely can be automatically downloaded and extracted with &lt;code>prm install&lt;/code> so long as you know the URL to where the archive is.&lt;/p>
-&lt;p>For example:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install https://packages.mycompany.com/prm/my-tool-1.2.3.tar.gz
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will attempt to download the PRM tool from the specified url and then install it like any other locally available PRM tool archive.&lt;/p>
-&lt;h3 id="remote-git-repository">Remote git repository&lt;/h3>
-&lt;p>&lt;strong>Git&lt;/strong> must be installed for this feature to work. The git repository must contain only one tool and must be structured with the &lt;code>prm-config.yml&lt;/code> file and the &lt;code>content&lt;/code> directory in the root directory of the repository.&lt;/p>
-&lt;p>For example:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm install --git-uri https://github.com/myorg/myawesometool
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will attempt to clone the PRM tool from the git repository at the specified URI and then install it to the default tool location.&lt;/p>
-&lt;h3 id="force-tool-installation">Force tool installation&lt;/h3>
-&lt;p>Adding the &lt;code>-f&lt;/code> or the &lt;code>--force&lt;/code> flag to the &lt;code>prm install&lt;/code> command will forcefully install/overwrite a tool if there is a tool installed with the same &lt;code>author&lt;/code>, &lt;code>name&lt;/code> and &lt;code>version&lt;/code>.&lt;/p>
-&lt;h3 id="updating-tools">Updating tools&lt;/h3>
-&lt;p>While there is no &lt;code>update&lt;/code> command, newer versions of tools can be installed like any other tool package.&lt;/p>
-&lt;p>Currently, only the latest version of a selected tool is executable; the ability to select an older version of the tool to execute will be added in the future.&lt;/p>
-&lt;h3 id="list-installed-tools">List installed tools&lt;/h3>
-&lt;p>Installed tools can be listed by running the command &lt;code>prm exec --list&lt;/code>, displayed in the following format:&lt;/p>
-&lt;p>&lt;img src="https://github.com/puppetlabs/prm/blob/main/docs/md/content/images/exec-list-tools.png?raw=true" alt="prm tool list screenshot">&lt;/p>
-&lt;p>The &lt;code>--toolpath&lt;/code> flag can also be added to list tools installed in an alternate location.&lt;/p></description></item><item><title>Prm: Anatomy of a PRM Tool</title><link>https://puppetlabs.github.io/devx/prm/concepts/tool-anatomy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/concepts/tool-anatomy/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevX Tooling Docs – Concepts</title><link>https://puppetlabs.github.io/devx/prm/concepts/</link><description>Recent content in Concepts on DevX Tooling Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://puppetlabs.github.io/devx/prm/concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Prm: Telemetry</title><link>https://puppetlabs.github.io/devx/prm/concepts/telemetry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/concepts/telemetry/</guid><description>
+&lt;p>By default, PRM collects some telemetry during each run.
+This information is non-identifying and does not include any personal or organizational details.&lt;/p>
+&lt;p>We use it to see how PRM is being used so we can better understand issues, features, and what to prioritize as we move forward.
+We emit this telemetry information to &lt;a href="https://honeycomb.io">Honeycomb&lt;/a> for introspection.
+We keep the telemetry for 60 days, after which it ages out.&lt;/p>
+&lt;h2 id="what-we-gather">What We Gather&lt;/h2>
+&lt;p>Each PRM run reports the following data:&lt;/p>
+&lt;ul>
+&lt;li>The UTC timestamp for when the run started&lt;/li>
+&lt;li>How long the command took to run&lt;/li>
+&lt;li>The operating system architecture (x64, ARM, etc)&lt;/li>
+&lt;li>The operating system type (darwin, linux, windows)&lt;/li>
+&lt;li>A uniquely generated internal identifier for the machine running the command&lt;/li>
+&lt;li>Whether or not the command ran in a CI environment&lt;/li>
+&lt;li>The arguments passed to PRM in this run&lt;/li>
+&lt;/ul>
+&lt;p>This data allows us to see broadly how many machines the program is running on, what the breakdown of operating system/system architecture is, how performant the program is, and which commands are most used.&lt;/p>
+&lt;p>When there is an error, PRM reports the error information as well - the stack trace information and the error message displayed to a user.
+This lets us investigate issues to see how common they are and improve our testing and error handling.&lt;/p>
+&lt;h2 id="running-prm-without-telemetry">Running PRM Without Telemetry&lt;/h2>
+&lt;p>We know that some users do not want to report telemetry;
+for those users, it is possible to install a &amp;ldquo;notel&amp;rdquo; version of the binary which does not include the telemetry bits at all.
+This binary is identical to the standard binary save that it does not have any mechanisms for recording or sending telemetry data.&lt;/p>
+&lt;p>For those users, an alternate install is available.&lt;/p>
+&lt;p>To install:&lt;/p>
+&lt;h3 id="bash">Bash&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">curl -L https://pup.pt/pdkgo/install.sh | sh -s -- --no-telemetry
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="powershell">PowerShell&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#8be9fd;font-style:italic">iex &lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;&amp;amp;{ &lt;/span>$(&lt;span style="color:#8be9fd;font-style:italic">irm &lt;/span>&lt;span style="color:#f1fa8c">&amp;#39;https://pup.pt/pdkgo/install.ps1&amp;#39;&lt;/span>)&lt;span style="color:#f1fa8c">; Install-Pct -NoTelemetry }&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Prm: Anatomy of a PRM Tool</title><link>https://puppetlabs.github.io/devx/prm/concepts/tool-anatomy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/concepts/tool-anatomy/</guid><description>
 &lt;h2 id="structure">Structure&lt;/h2>
 &lt;p>A PRM tool can be packaged as a &lt;code>.tar.gz&lt;/code> or hosted in a Github repository.
 Tools are how PRM knows to take defined actions against a file or folder; linting, testing, exporting, etc.&lt;/p>
