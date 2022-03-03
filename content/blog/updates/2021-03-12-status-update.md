@@ -33,7 +33,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-templates#413`][pdk-templates-pr-413]: "(#412) Add .devcontainer to .pdkignore", thanks to [silug][silug]
 - [`pdk-vanagon#278`][pdk-vanagon-pr-278]: "(maint) Disable ansicon in VS Code", thanks to [jpogran][jpogran] and the following people who helped get it over the line ([scotje][scotje])
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 
@@ -80,7 +80,7 @@ Weeding out reports for removed and unmaintained tickets, assigning components w
 ## Cisco backup/restore tasks
 
 [Ciaran][Ciaran] implemented config backup and restore tasks for Cisco devices in [this PR](https://github.com/puppetlabs/cisco_ios/pull/427).
-If you have the cisco_ios module in use, please give the new capabilities a spin and [tell us about it]({% link _posts/2021-01-20-reaching-out.md %})!
+If you have the cisco_ios module in use, please give the new capabilities a spin and [tell us about it](/blog/updates/2021-01-20-reaching-out.md)!
 Ciaran has been testing them against the Cisco Modelling Lab, and that is a pretty nifty thing to play around with.
 
 ## Litmus inventory.yaml files are on the move
@@ -114,11 +114,11 @@ While functional, the initial implementation was rather ... drab.
 
 **Before:**
 
-![screenshot of the old report, with lots of black lines and wasteful vertical layout.]({% link assets/2021-03-12-status-update/actions-report-before.png %})
+![screenshot of the old report, with lots of black lines and wasteful vertical layout.](/devx/assets/2021-03-12-status-update/actions-report-before.png)
 
 **After:**
 
-![screenshot of the new report, with a donut chart of overall success and compact horizontal arrangement.]({% link assets/2021-03-12-status-update/actions-report-after.png %})
+![screenshot of the new report, with a donut chart of overall success and compact horizontal arrangement.](/devx/assets/2021-03-12-status-update/actions-report-after.png)
 
 ## Other Work
 

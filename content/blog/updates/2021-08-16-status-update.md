@@ -25,7 +25,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-templates#443`][pdk-templates-pr-443]: "Only auto release if the changelog is updated", thanks to [jarretlavallee][jarretlavallee]
 - [`metadata-json-lint#118`][metadata-json-lint-pr-118]: "release 3.0.1", thanks to [bastelfreak][bastelfreak] and the following people who helped get it over the line ([ekohl][ekohl])
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

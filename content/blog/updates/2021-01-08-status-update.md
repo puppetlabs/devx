@@ -23,7 +23,7 @@ title: '2021-01-08: IAC Team Status Update'
 
 On behalf whole IAC team we would like to take the opportunity to wish all readers a Happy New Year! We hope you all had a great Christmas. The team took the opportunity enjoy the holidays, recharge our batteries and are now ready to tackle 2021 head on.
 
-![2021]({% link /assets/2020-01-08-status-update/2021.jpg %})
+![2021](/devx/assets/2020-01-08-status-update/2021.jpg)
 
 ## Happy New TP!
 

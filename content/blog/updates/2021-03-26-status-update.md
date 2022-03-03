@@ -26,7 +26,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 
 - [`ruby-pwsh#118`][ruby-pwsh-pr-118]: "(Maint) Ensure canonicalize correctly compares sorted hashes", thanks to [Hvid][Hvid]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 
@@ -51,7 +51,7 @@ In the near future we'll start to change our focus towards more training and edu
 
 We'd like to thank [Daiana][Daiana] for the wonderful work she did to update the Github Actions nightly report on the [community_management](https://puppetlabs.github.io/community_management/) website:
 
-![comm_mgmt_revamp]({% link /assets/2021-03-26-status-update/comm_mgmt_revamp.png %})
+![comm_mgmt_revamp](/devx/assets/2021-03-26-status-update/comm_mgmt_revamp.png)
 
 I hope you'll agree that this clean new look makes it easy to quickly get an overview of the state of our modules' CI runs.
 
@@ -87,7 +87,7 @@ We have now officially marked the `puppetlabs-translate` module as deprecated.
 
 As part of this ongoing effort, the team is spending a bit of downtime to go through and close out old, already addressed and/or now-irrelevant tickets:
 
-![jira_burndown]({% link /assets/2021-03-26-status-update/jira_burndown.png %})
+![jira_burndown](/devx/assets/2021-03-26-status-update/jira_burndown.png)
 
   [Adrian]:             https://github.com/adrianiurca
   [Ben]:                https://github.com/binford2k

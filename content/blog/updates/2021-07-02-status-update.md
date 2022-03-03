@@ -23,7 +23,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppetlabs-java_ks#373`][puppetlabs-java_ks-pr-373]: "Accept Datatype Sensitive for Secrets", thanks to [cocker-cc][cocker-cc]
 - [`puppetlabs-java_ks#372`][puppetlabs-java_ks-pr-372]: "Fix fingerprint comparison", thanks to [kdehairy][kdehairy] and the following people who helped get it over the line ([creativefre][creativefre])
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

@@ -44,9 +44,9 @@ We know you'll crush it, Diana!
 
 To give you something to feast your eyes on until we get it merged and deployed, here some screenshots of what's to come:
 
-![bar chart of commented and merged PRs over time]({% link /assets/2020-06-26-status-update/pr-work-done.png %})
+![bar chart of commented and merged PRs over time](/devx/assets/2020-06-26-status-update/pr-work-done.png)
 
-![line chart of PRs created by day by community members and puppet employees]({% link /assets/2020-06-26-status-update/prs-created.png %})
+![line chart of PRs created by day by community members and puppet employees](/devx/assets/2020-06-26-status-update/prs-created.png)
 
 ## CentOS 8 testing
 

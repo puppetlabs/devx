@@ -78,7 +78,7 @@ dsc_psmodule {'Ensure Ruby is Manageable via uru':
 
 And, well? It works! It's idempotent! And, much more interestingly from my perspective, it gives you property-by-property reporting for your DSC resources--it knows what the state of the resource is on your node before it calls the Set method for Invoke-DscResource...
 
-![Puppet run output reading "dsc_sourcelocation changed 'C:\code\temp' to 'C:\Program Files'"]({% link /assets/2020-03-30-dsc-announcement/property-rep.png %})
+![Puppet run output reading "dsc_sourcelocation changed 'C:\code\temp' to 'C:\Program Files'"](/devx/assets/2020-03-30-dsc-announcement/property-rep.png)
 
 So it can actually tell you _what changed_ during the run and when.
 In other words, DSC resources in this implementation now report **just** like any other Puppet resource.
@@ -89,7 +89,7 @@ What else do you get?
 Intellisense and some other awesome magic!
 Thanks to the [VSCode extension][extension] maintained by [James Pogran][james] and [Glenn Sarti][glenn]—in this screenshot, the editor is aware of all the parameters you might select, what their type is, and the valid values!
 
-![Image displaying intellisense capabilities of the VSCode extension where it is predicting which parameters to use and displaying their help information inline in the editor.]({% link /assets/2020-03-30-dsc-announcement/intellisense.jfif %})
+![Image displaying intellisense capabilities of the VSCode extension where it is predicting which parameters to use and displaying their help information inline in the editor.](/devx/assets/2020-03-30-dsc-announcement/intellisense.jfif %})
 
 > **Aside:**
 > You _are_ writing your Puppet code in VSCode with the [Puppet extension][extension] installed, aren't you?

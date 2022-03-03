@@ -30,7 +30,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`facterdb#169`][facterdb-pr-169]: "Add Sparc Solaris 11 Facter 4 facts", thanks to [genebean][genebean]
 - [`puppet-resource_api#289`][puppet-resource_api-pr-289]: "Only ship needed files", thanks to [ekohl][ekohl] and the following people who helped get it over the line ([puppetlabs-jenkins][puppetlabs-jenkins])
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 
@@ -76,7 +76,7 @@ It's been a busy week on the DevX team!
 We're delighted to announce the release of PDK version `2.1.1`.
 This release resolves an issue in which [child processes were unable to spawn](https://puppet.com/docs/pdk/2.x/release_notes_pdk.html#resolved-issue-with-access-denied-error-on-win-github-actions) on some Windows systems.
 Check out the [release notes](https://puppet.com/docs/pdk/2.x/release_notes_pdk.html) for a full list of enhancements and fixes that have gone in to `2.1.1`.
-We also have a new release of the [PCT tool]( {% link _posts/2021-06-04-pct-early-release.md %}). Version `0.2.0` can be installed over the top of `0.1.0` using these [installation instructions](https://github.com/puppetlabs/pdkgo#installing).
+We also have a new release of the [PCT tool]( /blog/updates/2021-06-04-pct-early-release.md). Version `0.2.0` can be installed over the top of `0.1.0` using these [installation instructions](https://github.com/puppetlabs/pdkgo#installing).
 Check out the [the `0.2.0` release page](https://github.com/puppetlabs/pdkgo/releases/tag/0.2.0) for full details of what's included.
 
 ## Community shout out

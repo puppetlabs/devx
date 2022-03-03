@@ -24,7 +24,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`rspec-puppet#11`][rspec-puppet-pr-11]: "Add Ruby 3 support", thanks to [bastelfreak][bastelfreak]
 - [`metadata-json-lint#116`][metadata-json-lint-pr-116]: "Add GitHub actions + badges", thanks to [bastelfreak][bastelfreak]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

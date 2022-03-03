@@ -29,7 +29,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppetlabs-stdlib#1176`][puppetlabs-stdlib-pr-1176]: "Fix typo in validate_ipv6_address function", thanks to [nbarrientos][nbarrientos]
 - [`community_management#68`][community_management-pr-68]: "Added back the ability to manage labels on multiple repos", thanks to [yachub][yachub]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## We need your feedback!
 

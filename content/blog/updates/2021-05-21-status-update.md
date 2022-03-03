@@ -35,7 +35,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-templates#434`][pdk-templates-pr-434]: "added blog_tags to .gitlab-ci.yml.erb", thanks to [skoef][skoef]
 - [`puppet-strings#266`][puppet-strings-pr-266]: "Only set tasks = true when parsing plans.", thanks to [binford2k][binford2k]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

@@ -27,7 +27,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-docker#20`][pdk-docker-pr-20]: "(FIXUP) Add additional error handling for Anubis v2 evaluations", thanks to [nkanderson][nkanderson]
 - [`pdk-vanagon#275`][pdk-vanagon-pr-275]: "(MAINT) Add latest puppets", thanks to [scotje][scotje]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module
 

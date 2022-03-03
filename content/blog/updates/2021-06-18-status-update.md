@@ -22,7 +22,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppet-modulebuilder#44`][puppet-modulebuilder-pr-44]: "Add license attribute to gemspec", thanks to [bastelfreak][bastelfreak]
 - [`puppetlabs_spec_helper#338`][puppetlabs_spec_helper-pr-338]: "Remove beaker integration", thanks to [ekohl][ekohl]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 
@@ -55,7 +55,7 @@ Also, thanks to [Glenn](https://github.com/glennsarti) for his help in the early
 In other news, we've been planning and discussing some of the next big pieces of functionality we want to get in to next release of the PCT EA programme (`0.2.0`).
 The sort of things you can expect is template installation and formalized template structure.
 Another area is addition of telemetry data that will help us determine how the app is being used and provide us with another feedback vector on top of the great [Github Discussions](https://github.com/puppetlabs/pdkgo/discussions) we've had so far.
-If you want to get involved in the PCT Early Access programme, check [this blog post out]( {% link _posts/2021-06-04-pct-early-release.md %})
+If you want to get involved in the PCT Early Access programme, check [this blog post out]( /blog/updates/2021-06-04-pct-early-release.md)
 
 ## Community Day
 

@@ -35,7 +35,7 @@ You can use Litmus and a Bolt task to provision a VM or a container. The provisi
 
 Running tasks in the provision module allows you to add arbitrary key/pair values to the Bolt inventory file.  The Bolt variables allows you to have multiple labels associated with a single machine. For example:
 
-![Showing role info in litmus_inventory.yaml file]({% link /assets/2021-05-07-running-multinode-modules-gcp/inventory_role.png %}) 
+![Showing role info in litmus_inventory.yaml file](/devx/assets/2021-05-07-running-multinode-modules-gcp/inventory_role.png) 
 [Example_websphere_provision_plan](https://github.com/puppetlabs/puppetlabs-websphere_application_server/blob/main/plans/provision_machines.pp)
 
 ## Set up a multi-node environment for testing
@@ -169,7 +169,7 @@ bundle exec rake 'litmus:tear_down'
 Example
 [puppetlabs-kubernetes](https://github.com/puppetlabs/puppetlabs-kubernetes)
 
-![Example github workflow run]({% link /assets/2021-05-07-running-multinode-modules-gcp/github_workflow.png %})
+![Example github workflow run](/devx/assets/2021-05-07-running-multinode-modules-gcp/github_workflow.png)
 
 ***PE and agents***
 

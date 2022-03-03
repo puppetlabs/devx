@@ -34,7 +34,7 @@ One feature that we can't help but continue to return to is just how much of a h
 Extracting a week's work of data from all that we have collected has allowed our good manager [Norman][norman] to not only spot patterns and common areas that we have since used in order to help stabilise our weekly runs, but to also identify issues that are outside the IAC domain.
 This in turn has allowed us to quickly reach out to our colleagues within Puppet both for assistance and to provide them with information that they can use to improve their own features.
 
-If you are as excited by all of this as I am then I urge you to read to [blog post]({% link _posts/2020-03-30-debugging-unit-tests-with-honeycomb.md %}) made by fellow team member [David Schmitt][david] and discover all that [Honeycomb][honeycomb] can do for you.
+If you are as excited by all of this as I am then I urge you to read to [blog post](/blog/updates/2020-03-30-debugging-unit-tests-with-honeycomb.md) made by fellow team member [David Schmitt][david] and discover all that [Honeycomb][honeycomb] can do for you.
 
 ## Module Releases
 

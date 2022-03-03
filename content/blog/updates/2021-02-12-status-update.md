@@ -20,7 +20,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppet-modulebuilder#33`][puppet-modulebuilder-pr-33]: "Store Ruby version as a Gem::Version in a var", thanks to [ekohl][ekohl]
 - [`puppetlabs_spec_helper#334`][puppetlabs_spec_helper-pr-334]: "Add gemspec required_ruby_version", thanks to [alexjfisher][alexjfisher]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

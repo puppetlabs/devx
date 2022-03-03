@@ -13,7 +13,7 @@ blog_tags:
 title: Debugging unit-tests with Honeycomb
 ---
 
-Since [last week]({% link _posts/2020-03-27-status-update.md %}#litmus-progress) we're collecting unit-test results and acceptance test runs in [honeycomb](https://honeycomb.io/), a tool for introspecting and interrogating production systems. In our team's case, CI is the "production" environment we manage. Today Daniel pointed out that there was a curious issue with one of our test suites:
+Since [last week](/devx/blog/updates/2020-03-27-status-update.md#litmus-progress) we're collecting unit-test results and acceptance test runs in [honeycomb](https://honeycomb.io/), a tool for introspecting and interrogating production systems. In our team's case, CI is the "production" environment we manage. Today Daniel pointed out that there was a curious issue with one of our test suites:
 
 ```ruby
 NoMethodError:
@@ -47,13 +47,13 @@ And this does not fail.
 Since the original report didn't have any more information attached (and for the sake of the pacing of this blog post) I went to honeycomb to see if other modules were exhibiting the same problem.
 After a couple of clicks this was what I had:
 
-![honeycomb heatmap screenshot]({% link assets/2020-03-30-debugging-with-honeycomb/honeycomb-heatmap.png %})
+![honeycomb heatmap screenshot](/devx/assets/2020-03-30-debugging-with-honeycomb/honeycomb-heatmap.png)
 
 The query selects by the error message and returns all examples with that error message.
 Clearly this has been going on for a while.
 Clicking through to the raw data I could jump to the full log of one of the runs:
 
-![honeycomb raw data screenshot]({% link assets/2020-03-30-debugging-with-honeycomb/honeycomb-raw-data.png %})
+![honeycomb raw data screenshot](/devx/assets/2020-03-30-debugging-with-honeycomb/honeycomb-raw-data.png)
 
 Which brings us to [this failure on github actions](https://github.com/puppetlabs/puppetlabs-package/runs/544125013#step:3:445):
 

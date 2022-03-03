@@ -47,14 +47,14 @@ Many thanks to [mdklapwijk](https://github.com/mdklapwijk), [Wiston999](https://
 
 ## IAC Team Demos
 We frequently demo some of the the enhancements to the [tools]({% link tools.html %}) under our management to ourselves or the wider company.
-Check out the videos on our new [demos]({% link _docs/demos.md %}) page where you can see:
+Check out the videos on our new [demos]({% link _docs/demos.md) page where you can see:
 - [Danny](https://github.com/carabasdaniel) taking you through the steps for adding a new provisioner to [Litmus](https://github.com/puppetlabs/puppet_litmus)
 - [Sheena](https://github.com/sheenaajay) demonstrating how we use the invaluable [pdksync](https://github.com/puppetlabs/pdksync) for deploying and testing the same change to multiple repos
 
 ## PuppetDSCBuilder Beta Testing
 It has been greatly encouraging to see a number of people signed up to be early adopters of the [`PuppetDSCBuilder`](https://github.com/puppetlabs/PuppetDscBuilder) project.
 We just had another sign up this week!
-If you're heavily involved in Windows admin, Powershell and DSC, check out the [previous blog post]({% link _posts/2020-03-30-dsc-announcement.md %}) from [Michael](https://github.com/michaeltlombardi) which outlines the functionality and how to get in touch with us to participate!
+If you're heavily involved in Windows admin, Powershell and DSC, check out the [previous blog post](/blog/updates/2020-03-30-dsc-announcement.md) from [Michael](https://github.com/michaeltlombardi) which outlines the functionality and how to get in touch with us to participate!
 
 That's a wrap for this week!
 To our Romanian IAC team members ([Danny](https://github.com/carabasdaniel), [Daiana](https://github.com/daianamezdrea), [Adrian](https://github.com/adrianiurca)) and any Romanian readers out there - enjoy the long weekend!

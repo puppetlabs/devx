@@ -30,7 +30,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-vanagon#277`][pdk-vanagon-pr-277]: "(MAINT) Bump `packaging` dep to at least 0.99.76 to fix MSI signing", thanks to [scotje][scotje]
 - [`pdk-vanagon#276`][pdk-vanagon-pr-276]: "(MAINT) Refactor `puppet-forge-api` component into `puppet-versions`", thanks to [scotje][scotje]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## Supported Module Major Releases
 

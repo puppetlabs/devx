@@ -29,7 +29,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppetlabs-kubernetes#507`][puppetlabs-kubernetes-pr-507]: "Add kubeadm skip-phases option", thanks to [BaronMsk][BaronMsk]
 - [`puppetlabs-kubernetes#500`][puppetlabs-kubernetes-pr-500]: "Configure image registry settings for  containerd when installed via package", thanks to [andeman][andeman]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

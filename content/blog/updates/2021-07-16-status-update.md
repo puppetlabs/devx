@@ -34,7 +34,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppetlabs-stdlib#1192`][puppetlabs-stdlib-pr-1192]: "Stdlib::Http::Method: Add new type for http methods", thanks to [b4ldr][b4ldr]
 - [`pdk-templates#442`][pdk-templates-pr-442]: "Set `skip_branch_with_pr` to true by default in appveyor.yml template", thanks to [TraGicCode][TraGicCode]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

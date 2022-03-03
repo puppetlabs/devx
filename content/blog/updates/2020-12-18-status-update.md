@@ -24,7 +24,7 @@ The holiday season upon us, the IAC team would like to wish all of Puppet's Open
 The IAC team will be taking a well earned break to recharge the batteries, and we hope you can too.
 We look forward to the continued open source communities help and contributions in 2021.
 
-![Christmas]({% link /assets/2020-12-18-status-update/christmas.jpg %})
+![Christmas](/devx/assets/2020-12-18-status-update/christmas.jpg)
 
 This week has been wild.
 Lots of community contributions, lots of releases, DSC updates, removing inappropriate language, Cloud CI progress and more! Check out below for the details.

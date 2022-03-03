@@ -18,7 +18,7 @@ title: '2021-03-19: IAC Team Status Update'
 
 All of the team located in Belfast were off on Wednesday this week for St Patricks day. For everyone it was pretty quiet due to local restrictions in place but nice to get a break in the middle of the week! :-)
 
-![st_patricks_day]({% link /assets/2021-03-19-status-update/stp_day.png %}){:align="center"}
+![st_patricks_day](/devx/assets/2021-03-19-status-update/stp_day.png){:align="center"}
 
 ## Community Contributions
 
@@ -44,7 +44,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-vanagon#280`][pdk-vanagon-pr-280]: "(MAINT) Update RHEL platform configs to use RedHat pooler images", thanks to [scotje][scotje]
 - [`pdk-vanagon#278`][pdk-vanagon-pr-278]: "(maint) Disable ansicon in VS Code", thanks to [jpogran][jpogran] and the following people who helped get it over the line ([scotje][scotje])
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

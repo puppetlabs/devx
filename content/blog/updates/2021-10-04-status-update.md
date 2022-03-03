@@ -37,7 +37,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppet-module-gems#167`][puppet-module-gems-pr-167]: "(maint) Fix pry dependency issue.", thanks to [BobosilaVictor][BobosilaVictor]
 - [`puppet_litmus#427`][puppet_litmus-pr-427]: "Allow Litmus Functions to accept a target", thanks to [RandomNoun7][RandomNoun7]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

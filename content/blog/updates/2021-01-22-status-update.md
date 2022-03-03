@@ -53,7 +53,7 @@ We are touching upon three different layers (facade, backend and provision resou
 
 ## Introduction to PDKSync
 
-[Sheena][sheena] has written a great blog post this week giving an [overview of PDKSync]({% link _docs/pdksync.md %}), an invaluable tool that we use a lot on the team!
+[Sheena][sheena] has written a great blog post this week giving an [overview of PDKSync]({% link _docs/pdksync.md), an invaluable tool that we use a lot on the team!
 
 ## litmus release 0.22.0
 

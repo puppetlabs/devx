@@ -37,7 +37,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-templates#446`][pdk-templates-pr-446]: "Don't append a tag to image name if one already exists", thanks to [silug][silug]
 - [`pdksync#156`][pdksync-pr-156]: "Remove reference to non existent branch", thanks to [attachmentgenie][attachmentgenie]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

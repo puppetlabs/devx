@@ -18,7 +18,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppetlabs-mysql#1387`][puppetlabs-mysql-pr-1387]: "Update xtrabackup package name for Ubuntu 20.04", thanks to [rsynnest][rsynnest]
 - [`iac#252`][iac-pr-252]: "Bump nokogiri from 1.11.0 to 1.11.5", thanks to [dependabot][dependabot]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

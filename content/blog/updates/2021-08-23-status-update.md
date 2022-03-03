@@ -23,7 +23,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`facterdb#176`][facterdb-pr-176]: "Adds Rocky Linux vagrant image, facts and get_facts.sh support", thanks to [fuero][fuero] and the following people who helped get it over the line ([ghoneycutt][ghoneycutt], [smortex][smortex])
 - [`puppet_litmus#425`][puppet_litmus-pr-425]: "Added options to idempotent_apply", thanks to [ZloeSabo][ZloeSabo]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

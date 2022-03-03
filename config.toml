@@ -7,9 +7,6 @@ enableRobotsTXT = true
 themesDir = "themes"
 theme = ["docsy"]
 
-# Set static dir
-staticDir = ['devx/static']
-
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 

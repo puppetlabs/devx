@@ -19,7 +19,7 @@ Although this week we did not have any contributions merged, we would like to sa
 
 On top of that we are really happy to announce that [puppetlabs-ibm_installation_manager](https://github.com/puppetlabs/puppetlabs-ibm_installation_manager) is now [supported](https://tickets.puppetlabs.com/browse/PF-2343) by the team.
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## PDK 2.1 Release
 We're delighted to announce the release of PDK 2.1!

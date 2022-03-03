@@ -38,7 +38,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppet-strings#285`][puppet-strings-pr-285]: "(FIXUP) Check for nil before injecting provider param into Types", thanks to [scotje][scotje]
 - [`puppetlabs_spec_helper#340`][puppetlabs_spec_helper-pr-340]: "Use Rubocop's Github Actions formatter if possible", thanks to [ekohl][ekohl] and the following people who helped get it over the line ([bastelfreak][bastelfreak])
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

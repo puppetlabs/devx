@@ -182,15 +182,15 @@ We hope to hear from you soon!
 [dsc-forge]: https://forge.puppet.com/dsc
 [dsc-gallery]: https://www.powershellgallery.com/packages/Puppet.Dsc
 [dsc-repo]: https://github.com/puppetlabs/Puppet.Dsc
-[img-docs-property]: {% link /assets/2020-09-21-dsc-release/docs-property.png %}
-[img-format-document-option]: {% link /assets/2020-09-21-dsc-release/format-document-option.png %}
-[img-intellisense-property]: {% link /assets/2020-09-21-dsc-release/intellisense-property.png %}
-[img-intellisense-resource]: {% link /assets/2020-09-21-dsc-release/intellisense-resource.png %}
-[img-manifest-fixed]: {% link /assets/2020-09-21-dsc-release/manifest-fixed.png %}
-[img-new-puppetdscmodule]: {% link /assets/2020-09-21-dsc-release/new-puppetdscmodule.png %}
-[img-problems-added-comma]: {% link /assets/2020-09-21-dsc-release/problems-added-comma.png %}
-[img-problems-pane]: {% link /assets/2020-09-21-dsc-release/problems-pane.png %}
-[img-problems]: {% link /assets/2020-09-21-dsc-release/problems.png %}
+[img-docs-property]: /devx/assets/2020-09-21-dsc-release/docs-property.png
+[img-format-document-option]: /devx/assets/2020-09-21-dsc-release/format-document-option.png
+[img-intellisense-property]: /devx/assets/2020-09-21-dsc-release/intellisense-property.png
+[img-intellisense-resource]: /devx/assets/2020-09-21-dsc-release/intellisense-resource.png
+[img-manifest-fixed]: /devx/assets/2020-09-21-dsc-release/manifest-fixed.png
+[img-new-puppetdscmodule]: /devx/assets/2020-09-21-dsc-release/new-puppetdscmodule.png
+[img-problems-added-comma]: /devx/assets/2020-09-21-dsc-release/problems-added-comma.png
+[img-problems-pane]: /devx/assets/2020-09-21-dsc-release/problems-pane.png
+[img-problems]: /devx/assets/2020-09-21-dsc-release/problems.png
 [initial-blog]: https://puppetlabs.github.io/iac/news/roadmap/2020/03/30/dsc-announcement.html
 [pdk-docs]: https://puppet.com/docs/pdk/1.x/pdk.html
 [pdk-download]: https://puppet.com/try-puppet/puppet-development-kit/

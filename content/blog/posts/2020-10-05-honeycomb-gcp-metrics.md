@@ -16,7 +16,7 @@ For a new and exciting project, the team is currently onboarding on [Google Clou
 <!-- This is part of a series of posts describing our journey. -->
 I can't wait until I'm able to share more, but for now I can only say we're looking at a [Sinatra](http://sinatrarb.com/intro.html)-hosted Ruby API server.
 To gain a better understanding how the service is performing, we want to collect some "traditional" metrics.
-Since we're already using honeycomb for tracing [tests]({% link _posts/2020-03-30-debugging-unit-tests-with-honeycomb.md %}) and [API calls](https://docs.honeycomb.io/getting-data-in/ruby/beeline/#sinatra), looking into honeycomb for more was my first choice.
+Since we're already using honeycomb for tracing [tests](/devx/blog/updates/2020-03-30-debugging-unit-tests-with-honeycomb.md) and [API calls](https://docs.honeycomb.io/getting-data-in/ruby/beeline/#sinatra), looking into honeycomb for more was my first choice.
 Most of the content here is based off the "Getting Started With Honeycomb Metrics" whitepaper at [https://www.honeycomb.io/white-papers/], made specific to Ruby and GCP.
 
 ## Static runtime information
@@ -62,7 +62,7 @@ Honeycomb.client.libhoney.add_field('flag_enabled', ENV['FLAG_ENABLED'] == 'true
 
 The attributes show up in the trace/span sidebar and can be used in any query:
 
-![]({% link assets/2020-10-05-honeycomb-gcp-metrics/gcp_attributes.png %})
+![](/devx/assets/2020-10-05-honeycomb-gcp-metrics/gcp_attributes.png)
 
 ## Dynamic Data
 
@@ -84,7 +84,7 @@ Honeycomb.client.libhoney.add_dynamic_field('global.process_uptime_seconds', pro
 
 After a few minutes of the heartbeat API call:
 
-![]({% link assets/2020-10-05-honeycomb-gcp-metrics/first_results.png %})
+![](/devx/assets/2020-10-05-honeycomb-gcp-metrics/first_results.png)
 
 ## Closing Notes
 

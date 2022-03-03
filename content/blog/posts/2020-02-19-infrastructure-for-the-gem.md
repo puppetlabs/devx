@@ -38,19 +38,19 @@ Follow the steps below to add them.
 
 1. Open a [git hub](https://github.com) page, perform the rest of these actions from there.
    1. Click on + to create a new repo.
-      ![+]({% link /assets/2020-02-19-infrastructure-for-the-gem/newrepo.png %})
+      ![+](/devx/assets/2020-02-19-infrastructure-for-the-gem/newrepo.png)
 
    2. Provider the owner information, repo name and license.
       ![owner information and repo name](/assets/2020-02-19-infrastructure-for-the-gem/owner.png)
       ![Example image](/assets/2020-02-19-infrastructure-for-the-gem/owner.png)
-      ![license]({% link /assets/2020-02-19-infrastructure-for-the-gem/license.png %})
+      ![license](/devx/assets/2020-02-19-infrastructure-for-the-gem/license.png)
       
    3. Click on Create repository button.
 
    4. Open the new repo created and navigate to settings tab to update the access.
 
    5. Provide your team as admin on github. (This example shows Puppet's modules team)
-      ![admin]({% link /assets/2020-02-19-infrastructure-for-the-gem/githubowner.png %})
+      ![admin](/devx/assets/2020-02-19-infrastructure-for-the-gem/githubowner.png)
 
 Follow the steps below for creating the gem structure, add the rubocop validation, add the travis or appveyor testing to the repo.
 
@@ -76,7 +76,7 @@ Follow the steps below for creating the gem structure, add the rubocop validatio
     git commit -m "Remove unused default gem development scripts"
     ```
     4.  Update gemspec with actual values for spec.authors, spec.email, spec.summary, spec.description, spec.homepage, spec.metadata.
-        ![gemspec]({% link /assets/2020-02-19-infrastructure-for-the-gem/gemspec.png %})
+        ![gemspec](/devx/assets/2020-02-19-infrastructure-for-the-gem/gemspec.png)
     ```shell
     git add -A
     git commit -m "Update gemspec with actual values"
@@ -105,16 +105,16 @@ Follow the steps below for creating the gem structure, add the rubocop validatio
 
 3. Follow the steps below for enabling CI jobs and dependabot for the repo.
    1. Set up travs-ci.org for simple rubocop and spec testing. Open a [travis-ci-org](https://travis-ci.org/account/repositories) page. Click on      Sync account.
-      ![Sync account]({% link /assets/2020-02-19-infrastructure-for-the-gem/syncaccount.png %})
+      ![Sync account](/devx/assets/2020-02-19-infrastructure-for-the-gem/syncaccount.png)
    2. Set up appveyor for simple rubocop and spec testing. Open a [ci-appveyor](https://ci.appveyor.com/account/puppetlabs/projects/new) page.        Click on Add.
-      ![Add]({% link /assets/2020-02-19-infrastructure-for-the-gem/add.png %})
+      ![Add](/devx/assets/2020-02-19-infrastructure-for-the-gem/add.png)
    3. Allow dependabot access the new repo created. Open a [dependabot](https://app.dependabot.com/accounts/puppetlabs/) page.
       Click on + , select the repo and provide access.
-      ![+]({% link /assets/2020-02-19-infrastructure-for-the-gem/dependabotadd.png %})
+      ![+](/devx/assets/2020-02-19-infrastructure-for-the-gem/dependabotadd.png)
 
-      ![repo created]({% link /assets/2020-02-19-infrastructure-for-the-gem/dependabot.png %})
+      ![repo created](/devx/assets/2020-02-19-infrastructure-for-the-gem/dependabot.png)
    4. Enable dependabot for the repo.
-      ![+]({% link /assets/2020-02-19-infrastructure-for-the-gem/dependabotenable.png %})
+      ![+](/devx/assets/2020-02-19-infrastructure-for-the-gem/dependabotenable.png)
 
 
 ## Wrapping Up

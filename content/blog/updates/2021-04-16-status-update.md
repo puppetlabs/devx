@@ -22,7 +22,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppet-strings#272`][puppet-strings-pr-272]: "Update CODEOWNERS", thanks to [binford2k][binford2k]
 - [`puppet_litmus#407`][puppet_litmus-pr-407]: "(maint) Update bolt requirement to include 3.x", thanks to [beechtom][beechtom]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

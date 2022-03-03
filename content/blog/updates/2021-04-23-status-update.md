@@ -54,7 +54,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`rspec-puppet#823`][rspec-puppet-pr-823]: "Added support for regexp arguments to Sensitive", thanks to [tiandrey][tiandrey]
 - [`rspec-puppet#819`][rspec-puppet-pr-819]: "Handle all auto*, not just autorequire", thanks to [ekohl][ekohl]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

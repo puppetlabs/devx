@@ -24,7 +24,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`pdk-templates#428`][pdk-templates-pr-428]: "Add EditorConfig", thanks to [jeffbyrnes][jeffbyrnes]
 - [`puppet-module-gems#163`][puppet-module-gems-pr-163]: "Pin docile on ruby 2.4", thanks to [alexjfisher][alexjfisher]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 

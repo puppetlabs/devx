@@ -52,7 +52,7 @@ On the topic of [Litmus][litmus-gem-home], we're continuing to make progress on 
 ## Puppet + DSC: Phase II Begins!
 
 We have continued to make excellent progress on our [refactor of DSC support][iac-41] in Puppet as we step in [Phase II][iac-685]!
-To find out what we're doing, the reasoning behind it and why we're **SUPER EXCITED** about this, check out my [earlier blog post]({% link _posts/2020-03-30-dsc-announcement.md %})
+To find out what we're doing, the reasoning behind it and why we're **SUPER EXCITED** about this, check out my [earlier blog post](/blog/updates/2020-03-30-dsc-announcement.md)
 
 The technical work this week has largely been in the de-prototyping details as we work to [convert the prototype build script into a supportable PowerShell module][iac-650].
 We [scaffolded the module][dsc-pr-module-scaffold] out using [Fred Weinmann's][ps-fred] [PSFramework module][ps-fred-psframework], giving us some nice automatic testing and a bunch of options to improve UX down the road (including layered configurations and tab completion).

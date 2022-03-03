@@ -93,7 +93,7 @@ This goes from from the Github Actions job through the rake task, through the pr
 It also includes our rspec tests running in that job, through litmus and bolt into the newly provisioned machine.
 
 Here's a screenshot of how it looks:
-![screenshot of a honeycomb waterfall trace diagram showing the flow of calls from github into our backend service and beyond]({% link assets/2020-12-11-status-update/cloud-ci-full-capture.png %})
+![screenshot of a honeycomb waterfall trace diagram showing the flow of calls from github into our backend service and beyond](/devx/assets/2020-12-11-status-update/cloud-ci-full-capture.png)
 
 Sidenote: Thanks to [Heston](https://github.com/hsnodgrass) for more dynamic build-matrix calculations: the development version of litmus now can also calculate which puppet collections are [necessary for testing](https://github.com/puppetlabs/puppet_litmus/pull/357) from metadata.
 
@@ -104,7 +104,7 @@ Through the [community scripts](https://github.com/puppetlabs/community_manageme
 While yesterday night was especially rough with some timeouts and other issues across multiple modules, on a cell-by-cell basis 435 of 447 cells succeeded (97.3%) with an all week average of 2265/2361 (95.9%).
 For everyone except the few people who have access to the [honeycomb stats](https://ui.honeycomb.io/puppet-modules/datasets/litmus-tests/result/tVLDJWy1Avr), here's a screenshot of the top-level success/failure chart:
 
-![Screenshot of a stacked area graph showing job successes and failures over the last 24 hours. There is a block of tests running from midnight through half three with an arbitrary value highlighted showing 21 cells succeeding and 2 failing for this particular 5 minute span.]({% link assets/2020-12-11-status-update/pass-fail-honeycomb.png %})
+![Screenshot of a stacked area graph showing job successes and failures over the last 24 hours. There is a block of tests running from midnight through half three with an arbitrary value highlighted showing 21 cells succeeding and 2 failing for this particular 5 minute span.](/devx/assets/2020-12-11-status-update/pass-fail-honeycomb.png)
 
 Once the aforementioned improvements to the tooling get merged and released, we can drill into the failing cells from this view and get all the details on what went wrong.
 

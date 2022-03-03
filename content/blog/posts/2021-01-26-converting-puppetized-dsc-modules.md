@@ -150,7 +150,7 @@ Check it out on our [blog page][blog-page]!
 
 We suggest using the Puppet VSCode extension as it comes built in with an auto-completer. This will help you keep your pins up to date with the puppetfile resolver.
 
-![Showing validation errors in your Puppetfile](/iac/assets/2021-01-26-converting-dsc-modules/puppetfile-resolver.gif)
+![Showing validation errors in your Puppetfile](/devx/assets/2021-01-26-converting-dsc-modules/puppetfile-resolver.gif)
 
 ## What else is coming
 

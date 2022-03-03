@@ -54,7 +54,7 @@ At the moment we depend on Travis and Docker containers to offer you a part of t
 
 ## Life of an intern at Puppet
 
-As you all know already, we have our lovely new intern, [Disha][disha-maker] who is sharing her experience with the team on the [Life of an intern at Puppet]({% link _docs/life_of_intern.md %}) page. Please follow her blog to keep up to date with her activity here.
+As you all know already, we have our lovely new intern, [Disha][disha-maker] who is sharing her experience with the team on the [Life of an intern at Puppet]({% link _docs/life_of_intern.md) page. Please follow her blog to keep up to date with her activity here.
 
 ## #everyonecancontribute podcast
 

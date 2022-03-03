@@ -38,7 +38,7 @@ The IAC team would like to thank [Edwin Maldonado](https://github.com/mcka1n) fr
 
 Edwin's first contribution during Community Day to [hiera-eyaml](https://github.com/voxpupuli/hiera-eyaml/pull/313) has already been released. 
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module Releases
 

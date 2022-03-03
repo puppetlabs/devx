@@ -28,7 +28,7 @@ We'd like to thank the following people in the Puppet Community for their contri
 - [`puppetlabs-postgresql#1279`][puppetlabs-postgresql-pr-1279]: "Use Puppet-Datatype Sensitive for Passwords", thanks to [cocker-cc][cocker-cc]
 - [`puppetlabs-stdlib#1209`][puppetlabs-stdlib-pr-1209]: "Added to_toml function", thanks to [nmaludy][nmaludy]
 
-Check [all the ways to reach us]({% link _posts/2021-01-20-reaching-out.md %}) if you want to directly contact us about anything module related.
+Check [all the ways to reach us](/blog/updates/2021-01-20-reaching-out.md) if you want to directly contact us about anything module related.
 
 ## New Module / Gem Releases
 
