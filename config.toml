@@ -99,7 +99,7 @@ id = "UA-00000000-0"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-section = ["HTML", "RSS"] #"print"
+section = ["HTML"] #"print"
 
 [params]
 copyright = "Puppet"
