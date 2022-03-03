@@ -1,3 +1,38 @@
 footer {
     background-color: $primary;
 }
+
+.taxonomy-btn {
+    background: $dark;
+    border-width: 0;
+    border-radius: 3px 3px 3px 3px;
+    color: $white;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    max-width: 100%;
+    padding: 0 0.5em 0 0.5em;
+    position: relative;
+    margin: 0 0.5em 0.2em 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    
+    
+    &:hover {
+      background-color: $primary;
+      color: $white;
+  
+      .taxonomy-count{
+        color: $dark!important;
+      }
+    }
+    
+    &:hover::before {
+      background: $primary; 
+    }
+  }
+
+.hidden {
+    display: none;
+}

@@ -64,10 +64,17 @@
   {{- if $withChild }}
   {{- $ulNr := add $ulNr 1 }}
   <ul class="ul-{{ $ulNr }}{{ if (gt $ulNr 1)}} foldable{{end}}">
+    {{ $count := 0}}
     {{ range $pages -}}
-    {{ if (not (and (eq $s $p.Site.Home) (eq .Params.toc_root true))) -}}
+    {{ $count = add $count 1 }}
+    {{ if (and (not (and (eq $s $p.Site.Home) (eq .Params.toc_root true))) (lt $count 6)) -}}
     {{ template "section-tree-nav-section" (dict "page" $p "section" . "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" $ulShow) }}
     {{- end }}
+    {{ if eq $count 6 }}
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+      <a href="{{ $s.Permalink }}">View More</a>
+    </li>
+    {{ end }}
     {{- end }}
   </ul>
   {{- end }}
