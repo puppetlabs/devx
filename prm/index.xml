@@ -356,4 +356,14 @@ Moreover, PRM already knows the available tags and categories, so if you&amp;rsq
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Which will render this document to your terminal with syntax highlighting.&lt;/p>
 &lt;h2 id="documentation-versions">Documentation Versions&lt;/h2>
 &lt;p>The version of the documentation available in the terminal is always the documents as they existed when that version was shipped.
-For updated docs, you will need to read the documentation online, either in &lt;a href="https://github.com/puppetlabs/prm/tree/main/docs/md/content">Github&lt;/a> or on our &lt;a href="https://puppetlabs.github.io/devx/prm/">docs site&lt;/a>.&lt;/p></description></item></channel></rss>
+For updated docs, you will need to read the documentation online, either in &lt;a href="https://github.com/puppetlabs/prm/tree/main/docs/md/content">Github&lt;/a> or on our &lt;a href="https://puppetlabs.github.io/devx/prm/">docs site&lt;/a>.&lt;/p></description></item><item><title>Prm: Sharing Tools</title><link>https://puppetlabs.github.io/devx/prm/usage/tool-sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://puppetlabs.github.io/devx/prm/usage/tool-sharing/</guid><description>
+&lt;p>After you&amp;rsquo;ve written your own tool you may wish to share it with other members of your team or the wider Puppet community. Work is underway to improve this initial functionality.&lt;/p>
+&lt;h3 id="prm-build">prm build&lt;/h3>
+&lt;p>This command will attempt to package the current working directory. You can change the directory to pack by providing &lt;code>--sourcedir&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">prm build &lt;span style="color:#ff79c6">[&lt;/span>--sourcedir &amp;lt;dir&amp;gt;&lt;span style="color:#ff79c6">][&lt;/span>--targetdir &amp;lt;dir&amp;gt;&lt;span style="color:#ff79c6">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>build&lt;/code> command will ensure that the directory that you are attempting to package will produce a valid Puppet Runtime Manager tool by looking for a &lt;code>prm-config.yml&lt;/code> and a &lt;code>content&lt;/code> directory.&lt;/p>
+&lt;p>The resulting &lt;code>tar.gz&lt;/code> package will be created by default in &lt;code>$cwd/pkg&lt;/code>. You can change the directory the package is created in by providing &lt;code>--targetdir&lt;/code>.&lt;/p>
+&lt;blockquote>
+&lt;p>NOTE: When using &lt;code>--sourcedir&lt;/code> use either the full path or the relative path without the leading &lt;code>./&lt;/code> (&lt;code>.\&lt;/code> on Windows).
+If you use the leading &lt;code>./&lt;/code> it will incorrectly tar the project.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
