@@ -11,6 +11,7 @@ blog_tags:
 - custom resources
 - deferred
 title: How to use agent-side information on the puppetserver
+draft: true
 ---
 
 This question was posted on the [Puppet Community Slack](https://slack.puppet.com/) yesterday:

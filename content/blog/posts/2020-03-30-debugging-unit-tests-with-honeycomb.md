@@ -11,6 +11,7 @@ blog_tags:
 - testing
 - honeycomb
 title: Debugging unit-tests with Honeycomb
+draft: true
 ---
 
 Since [last week](/devx/blog/updates/2020-03-27-status-update.md#litmus-progress) we're collecting unit-test results and acceptance test runs in [honeycomb](https://honeycomb.io/), a tool for introspecting and interrogating production systems. In our team's case, CI is the "production" environment we manage. Today Daniel pointed out that there was a curious issue with one of our test suites:

@@ -9,6 +9,7 @@ blog_tags:
 - dsc
 - windows
 title: 'DSC + Puppet: Incoming!'
+draft: true
 ---
 
 As [Glenn][glenn] and I alluded to on the [PowerScripting Podcast][podcast], our team has been hard at work re-envisioning how we want to present the DSC + Puppet story for our users.

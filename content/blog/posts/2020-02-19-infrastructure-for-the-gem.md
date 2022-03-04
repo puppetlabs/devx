@@ -9,6 +9,7 @@ blog_tags:
 - modules
 - testing
 title: Setting up basic infrastructure for your gem
+draft: true
 ---
 
 ## Introduction

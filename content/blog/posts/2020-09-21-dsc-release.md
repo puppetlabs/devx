@@ -10,6 +10,7 @@ blog_tags:
 - windows
 - forge
 title: 'DSC + Puppet: Arrived!'
+draft: true
 ---
 
 Earlier this year, we [announced an upcoming project][initial-blog] to drastically improve the story for using DSC Resources with Puppet.

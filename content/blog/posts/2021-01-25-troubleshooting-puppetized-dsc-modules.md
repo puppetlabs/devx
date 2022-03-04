@@ -2,6 +2,7 @@
 author: michaeltlombardi
 date: "2021-01-25T00:00:00Z"
 title: Troubleshooting Puppetized DSC Modules
+draft: true
 ---
 
 *[An edited version of this post was also published on the [OSPAssist Portal](https://ospassist.puppet.com/) as [Troubleshooting Puppetized DSC modules](https://ospassist.puppet.com/hc/en-us/articles/1500002388661-Troubleshooting-Puppetized-DSC-modules) and [Advanced troubleshooting: dig deeper with pry](https://ospassist.puppet.com/hc/en-us/articles/360061073994-Advanced-troubleshooting-dig-deeper-with-pry)]*

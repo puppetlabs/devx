@@ -10,6 +10,7 @@ blog_tags:
 - metadata
 - metrics
 title: Collecting GCP info and system metrics for Honeycomb
+draft: true
 ---
 
 For a new and exciting project, the team is currently onboarding on [Google Cloud Platform (GCP)](https://en.wikipedia.org/wiki/Google_Cloud_Platform) development.

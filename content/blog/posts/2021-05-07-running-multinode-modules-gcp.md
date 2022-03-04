@@ -10,6 +10,7 @@ blog_tags:
 - multi node
 title: Run multi-node module tests with cloud continuous integration (CI) in Google
   Cloud Platform (GCP)
+draft: true
 ---
 
 Multi-node modules are modules which use multiple nodes to run integration tests. Integration testing is where you set up multiple Virtual Machines (VM) or containers, and test interactions between them. For example, this could be:

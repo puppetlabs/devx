@@ -8,6 +8,7 @@ blog_tags:
 - pdk
 - pct
 title: "Puppet Content Templates 0.1.0 \U0001F680"
+draft: true
 ---
 
 # PDK Puppet Content Templates 0.1.0 released ✨

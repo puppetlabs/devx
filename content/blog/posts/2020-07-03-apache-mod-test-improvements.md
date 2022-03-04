@@ -9,6 +9,7 @@ blog_tags:
 - MODs
 - testing
 title: Apache MOD Test Maintenance
+draft: true
 ---
 This week sees version `v5.5.0` of the [puppetlabs-apache][puppetlabs-apache-forge] module released.
 There are a lot of new features within this release - check out the [CHANGELOG entry for this version][apache-5-5-0-changelog] to see what's included.
