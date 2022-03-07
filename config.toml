@@ -1,5 +1,5 @@
 baseURL = "https://puppetlabs.github.io/devx/"
-title = "DevX Tooling Docs"
+title = "DevX Tools & Modules"
   
 enableRobotsTXT = true
 
@@ -24,16 +24,23 @@ enableMissingTranslationPlaceholders = true
 [taxonomies]
 tag = "tags"
 category = "categories"
+blog_tag = "blog_tags"
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
-taxonomyCloud = ["tags", "categories"] 
+taxonomyCloud = ["tags", "categories", "blog_tags"] 
 
 # If used, must have same lang as taxonomyCloud
-taxonomyCloudTitle = ["Tag Cloud", "Categories"] 
+taxonomyCloudTitle = ["Tag Cloud", "Categories", "Blog Tags"] 
 
 # set taxonomyPageHeader = [] to hide taxonomies on the page headers
-taxonomyPageHeader = ["tags", "categories"] 
+taxonomyPageHeader = ["tags", "categories", "blog_tags"]
+
+# Only show taxonomy categories on certain pages
+  [params.taxonomy.showInSections]
+    blog_tags = ["blog"]
+    categories = ["blog"]
+    tags = ["prm", "pct"]
 
 
 # Highlighting config
@@ -46,8 +53,8 @@ pygmentsUseClassic = false
 pygmentsStyle = "tango"
 
 # Configure how URLs look like per section.
-[permalinks]
-blog = "/:section/:year/:month/:day/:slug/"
+# [permalinks]
+# posts = "/:section/:year/:month/:day/:slug/"
 
 ## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]
@@ -92,7 +99,7 @@ id = "UA-00000000-0"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-section = ["HTML", "RSS"] #"print"
+section = ["HTML"] #"print"
 
 [params]
 copyright = "Puppet"

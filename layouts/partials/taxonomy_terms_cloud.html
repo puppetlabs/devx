@@ -1,0 +1,40 @@
+{{ $context := .context  }}
+{{ $taxo := .taxo  }}
+{{ $title := .title  }}
+{{ if isset $context.Site.Taxonomies ( lower $taxo ) }}
+  {{ $taxonomy := index $context.Site.Taxonomies ( lower $taxo ) }}
+  {{ if (gt (len $taxonomy) 0)}}
+    <script>
+      function revealTags(id) {
+        console.log(id)
+        var list = document.getElementsByClassName("hidden");
+        for (let item of list) {
+          if (item.id.split("--")[0] == id) {
+            item.style.display = "inline-block"
+          }
+        }
+        
+        document.getElementById(id).remove()
+      }
+    </script>
+    <div class="taxonomy taxonomy-terms-cloud taxo-{{ urlize $taxo }}">
+      {{ with $title }}
+        <h5 class="taxonomy-title">{{ . }}</h5>
+      {{ end }}
+      <ul class="taxonomy-terms">
+        {{ $count := 0 }}
+        {{ $limit := 25}}
+        {{ range sort $taxonomy ".Count" "desc" }}
+          {{ if lt $count $limit }}
+          <li><a class="taxonomy-term" href="{{ .Page.Permalink }}" data-taxonomy-term="{{ urlize .Page.Title }}"><span class="taxonomy-label">{{ .Page.Title }}</span><span class="taxonomy-count">{{ .Count }}</span></a></li>
+          {{ else if (eq $count (add 1 $limit)) }}
+          <button id="{{print $title}}" type="button" class="taxonomy-btn" onclick="revealTags({{print $title}})">View More</button>
+          {{ else }}
+          <li><a id="{{print $title "--" $count}}" class="taxonomy-term hidden" href="{{ .Page.Permalink }}" data-taxonomy-term="{{ urlize .Page.Title }}"><span class="taxonomy-label">{{ .Page.Title }}</span><span class="taxonomy-count">{{ .Count }}</span></a></li>
+          {{ end }}
+          {{ $count = add $count 1 }}
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+{{ end }}
